@@ -1,0 +1,50 @@
+[
+  {
+    "id": "CONS-2025-001",
+    "title": "Mobile Number Portability Regulations 2025",
+    "sector": "Telecom",
+    "summary": "Proposed regulations to establish a comprehensive mobile number portability framework enabling subscribers to retain their phone numbers when switching mobile operators.",
+    "document": "/assets/MNP-Consultation-2025.pdf",
+    "status": "Open",
+    "opens": "2025-02-14",
+    "closes": "2025-03-31",
+    "submissionsCount": 47,
+    "createdAt": "2025-02-10T08:00:00Z"
+  },
+  {
+    "id": "CONS-2025-002",
+    "title": "5G Spectrum Allocation Framework",
+    "sector": "Spectrum",
+    "summary": "Consultation on the policy and technical framework for the allocation of millimeter-wave and sub-6GHz spectrum bands for commercial 5G deployment in Botswana.",
+    "document": "/assets/5G-Spectrum-Consultation-2025.pdf",
+    "status": "Open",
+    "opens": "2025-03-01",
+    "closes": "2025-04-15",
+    "submissionsCount": 23,
+    "createdAt": "2025-02-28T08:00:00Z"
+  },
+  {
+    "id": "CONS-2025-003",
+    "title": "Electronic Communications (Tariff) Regulations Review",
+    "sector": "Telecom",
+    "summary": "Review of tariff regulations applicable to electronic communications service providers including interconnection rates and retail price benchmarking methodology.",
+    "document": "/assets/Tariff-Review-Consultation-2025.pdf",
+    "status": "Closing",
+    "opens": "2025-02-01",
+    "closes": "2025-03-22",
+    "submissionsCount": 31,
+    "createdAt": "2025-01-28T08:00:00Z"
+  },
+  {
+    "id": "CONS-2024-008",
+    "title": "Draft Data Protection Regulations 2024",
+    "sector": "Internet & Data",
+    "summary": "Implementing regulations to the Botswana Data Protection Act, including data breach notification requirements and cross-border data transfer rules.",
+    "document": "/assets/DPA-Regulations-Consultation-2024.pdf",
+    "status": "Closed",
+    "opens": "2024-10-01",
+    "closes": "2024-12-15",
+    "submissionsCount": 142,
+    "createdAt": "2024-09-25T08:00:00Z"
+  }
+]

@@ -1,0 +1,2045 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Botswana Communications Regulatory Authority – Regulating telecommunications, broadcasting, postal, internet and cybersecurity services in Botswana.">
+<meta name="theme-color" content="#0A1628">
+<title>BOCRA – Botswana Communications Regulatory Authority</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+/* ═══════════════════════════════════════════════════════════
+   TOKENS
+═══════════════════════════════════════════════════════════ */
+:root {
+  --navy:        #0A1628;
+  --navy-mid:    #112240;
+  --navy-light:  #1C3460;
+  --gold:        #C9A84C;
+  --gold-light:  #E8C96E;
+  --gold-pale:   #F5E9C8;
+  --white:       #FFFFFF;
+  --off-white:   #F7F5F0;
+  --steel:       #8BA3BF;
+  --steel-light: #C8D8E8;
+  --red:         #C0392B;
+  --orange:      #E67E22;
+  --green:       #27AE60;
+  --blue:        #2980B9;
+  --text-dark:   #0A1628;
+  --text-mid:    #3A4F6A;
+  --text-light:  #8BA3BF;
+  --border:      rgba(201,168,76,0.22);
+  --border-light:rgba(10,22,40,0.09);
+  --shadow-sm:   0 2px 12px rgba(10,22,40,0.08);
+  --shadow-md:   0 8px 32px rgba(10,22,40,0.12);
+  --shadow-lg:   0 20px 60px rgba(10,22,40,0.18);
+  --radius:      2px;
+  --transition:  all 0.28s cubic-bezier(.4,0,.2,1);
+}
+/* HIGH CONTRAST MODE */
+body.hc-mode {
+  --navy: #000; --navy-mid: #111; --navy-light: #222;
+  --gold: #FFD700; --gold-light: #FFE84D; --white: #FFF;
+  --off-white: #F5F5F5; --steel: #999; --steel-light: #CCC;
+  --text-dark: #000; --text-mid: #111;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   RESET & BASE
+═══════════════════════════════════════════════════════════ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body { font-family: 'DM Sans', sans-serif; background: var(--white); color: var(--text-dark); overflow-x: hidden; line-height: 1.6; }
+img { max-width: 100%; }
+a { color: inherit; }
+button { cursor: pointer; font-family: inherit; }
+
+/* ACCESSIBILITY */
+.skip-link {
+  position: absolute; top: -100px; left: 16px; z-index: 9999;
+  background: var(--gold); color: var(--navy);
+  padding: 10px 20px; font-weight: 700; font-size: 14px;
+  text-decoration: none; transition: top 0.2s;
+  clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 8px 100%, 0 calc(100% - 8px));
+}
+.skip-link:focus { top: 16px; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; }
+:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; border-radius: 2px; }
+
+/* ═══════════════════════════════════════════════════════════
+   LAYOUT UTILS
+═══════════════════════════════════════════════════════════ */
+.container { max-width: 1320px; margin: 0 auto; padding: 0 40px; }
+.tag {
+  display: inline-block; font-family: 'JetBrains Mono', monospace;
+  font-size: 10px; letter-spacing: 2.5px; text-transform: uppercase;
+  color: var(--gold); border: 1px solid var(--gold); padding: 4px 12px; margin-bottom: 14px;
+}
+.section-title { font-family: 'Playfair Display', serif; font-size: clamp(26px,3.2vw,42px); font-weight: 700; line-height: 1.15; color: var(--navy); }
+.section-title span { color: var(--gold); }
+.section-title.light { color: var(--white); }
+.section-lead { font-size: 15px; color: var(--text-mid); font-weight: 300; line-height: 1.8; margin-top: 12px; }
+
+/* BUTTONS */
+.btn { display: inline-flex; align-items: center; gap: 8px; font-family: 'DM Sans', sans-serif; font-weight: 600; font-size: 14px; letter-spacing: 0.3px; text-decoration: none; border: none; transition: var(--transition); cursor: pointer; white-space: nowrap; }
+.btn-gold { background: var(--gold); color: var(--navy); padding: 13px 28px; clip-path: polygon(0 0,calc(100% - 10px) 0,100% 10px,100% 100%,10px 100%,0 calc(100% - 10px)); }
+.btn-gold:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(201,168,76,0.4); }
+.btn-outline-gold { background: transparent; color: var(--gold); padding: 12px 28px; border: 1px solid var(--gold); }
+.btn-outline-gold:hover { background: rgba(201,168,76,0.1); }
+.btn-outline-navy { background: transparent; color: var(--navy); padding: 12px 28px; border: 1px solid var(--navy); clip-path: polygon(0 0,calc(100% - 8px) 0,100% 8px,100% 100%,8px 100%,0 calc(100% - 8px)); }
+.btn-outline-navy:hover { background: var(--navy); color: var(--white); }
+.btn-ghost { background: transparent; color: var(--steel-light); padding: 12px 28px; border: 1px solid rgba(139,163,191,0.35); }
+.btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
+.btn-sm { font-size: 12px; padding: 9px 18px; }
+.btn-full { width: 100%; justify-content: center; }
+
+/* ═══════════════════════════════════════════════════════════
+   COOKIE CONSENT BANNER
+═══════════════════════════════════════════════════════════ */
+#cookie-banner {
+  position: fixed; bottom: 0; left: 0; right: 0; z-index: 8000;
+  background: var(--navy-mid); border-top: 2px solid var(--gold);
+  padding: 18px 40px; display: flex; align-items: center; gap: 24px; flex-wrap: wrap;
+  box-shadow: 0 -8px 40px rgba(0,0,0,0.4);
+  animation: slideUp 0.5s ease;
+}
+@keyframes slideUp { from { transform: translateY(100%); } to { transform: translateY(0); } }
+.cb-text { font-size: 13px; color: var(--steel-light); flex: 1; min-width: 280px; }
+.cb-text a { color: var(--gold); text-decoration: underline; }
+.cb-actions { display: flex; gap: 10px; }
+
+/* ═══════════════════════════════════════════════════════════
+   TOAST NOTIFICATIONS
+═══════════════════════════════════════════════════════════ */
+#toast-container {
+  position: fixed; top: 90px; right: 24px; z-index: 9000;
+  display: flex; flex-direction: column; gap: 10px;
+  pointer-events: none;
+}
+.toast {
+  display: flex; align-items: flex-start; gap: 12px;
+  background: var(--white); border: 1px solid var(--border-light);
+  border-left: 4px solid var(--green); padding: 14px 18px;
+  box-shadow: var(--shadow-md); min-width: 300px; max-width: 380px;
+  pointer-events: all; animation: toastIn 0.35s ease;
+}
+.toast.error { border-left-color: var(--red); }
+.toast.warning { border-left-color: var(--orange); }
+.toast.info { border-left-color: var(--blue); }
+@keyframes toastIn { from { opacity:0; transform: translateX(40px); } to { opacity:1; transform: translateX(0); } }
+@keyframes toastOut { to { opacity:0; transform: translateX(40px); } }
+.toast-icon { font-size: 18px; flex-shrink: 0; }
+.toast-body { flex: 1; }
+.toast-title { font-size: 13px; font-weight: 600; color: var(--navy); }
+.toast-msg { font-size: 12px; color: var(--text-mid); margin-top: 2px; }
+.toast-close { background: none; border: none; color: var(--steel); font-size: 16px; cursor: pointer; padding: 0 4px; }
+
+/* ═══════════════════════════════════════════════════════════
+   TOP BAR
+═══════════════════════════════════════════════════════════ */
+.top-bar {
+  background: var(--navy); padding: 7px 0;
+  border-bottom: 1px solid rgba(201,168,76,0.15);
+}
+.top-bar .container { display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+.tb-left { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+.tb-contact { display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--steel-light); text-decoration: none; transition: color 0.2s; }
+.tb-contact:hover { color: var(--gold); }
+.tb-sep { color: var(--navy-light); font-size: 10px; }
+.tb-right { display: flex; align-items: center; gap: 12px; }
+.lang-btns { display: flex; }
+.lang-btn { font-family: 'JetBrains Mono', monospace; font-size: 10px; padding: 3px 10px; border: 1px solid var(--navy-light); color: var(--steel); background: transparent; cursor: pointer; transition: var(--transition); letter-spacing: 1px; }
+.lang-btn.active, .lang-btn:hover { border-color: var(--gold); color: var(--gold); }
+.acc-tools { display: flex; gap: 6px; }
+.acc-tool { width: 28px; height: 28px; border: 1px solid var(--navy-light); background: transparent; color: var(--steel); cursor: pointer; font-size: 11px; font-weight: 700; transition: var(--transition); display: flex; align-items: center; justify-content: center; }
+.acc-tool:hover { border-color: var(--gold); color: var(--gold); }
+
+/* ═══════════════════════════════════════════════════════════
+   NAVBAR
+═══════════════════════════════════════════════════════════ */
+.navbar {
+  background: var(--white); border-bottom: 3px solid var(--gold);
+  position: sticky; top: 0; z-index: 1000;
+  box-shadow: var(--shadow-sm);
+}
+.navbar .container { display: flex; align-items: center; height: 70px; gap: 0; }
+/* Logo */
+.logo-link { display: flex; align-items: center; gap: 14px; text-decoration: none; margin-right: 36px; flex-shrink: 0; }
+.logo-hex {
+  width: 48px; height: 48px; background: var(--navy);
+  display: flex; align-items: center; justify-content: center;
+  clip-path: polygon(50% 0%,100% 25%,100% 75%,50% 100%,0% 75%,0% 25%);
+  transition: var(--transition);
+}
+.logo-link:hover .logo-hex { background: var(--gold); }
+.logo-hex span { font-family: 'Playfair Display', serif; font-weight: 900; font-size: 18px; color: var(--gold); }
+.logo-link:hover .logo-hex span { color: var(--navy); }
+.logo-text-block { display: flex; flex-direction: column; }
+.logo-name { font-family: 'Playfair Display', serif; font-weight: 900; font-size: 20px; color: var(--navy); line-height: 1; letter-spacing: -0.5px; }
+.logo-sub { font-size: 8.5px; font-weight: 500; color: var(--steel); letter-spacing: 1.5px; text-transform: uppercase; margin-top: 3px; }
+/* Nav links */
+.main-nav { display: flex; align-items: center; gap: 2px; flex: 1; }
+.nav-item { position: relative; }
+.nav-link {
+  display: flex; align-items: center; gap: 5px;
+  font-size: 13px; font-weight: 500; color: var(--text-mid);
+  padding: 8px 13px; text-decoration: none; border: none; background: none;
+  transition: var(--transition); white-space: nowrap;
+  border-radius: var(--radius); cursor: pointer;
+}
+.nav-link::after {
+  content: ''; position: absolute; bottom: -3px; left: 13px; right: 13px; height: 2px;
+  background: var(--gold); transform: scaleX(0); transition: transform 0.25s ease;
+}
+.nav-link:hover, .nav-link[aria-expanded="true"] { color: var(--navy); }
+.nav-link:hover::after, .nav-link[aria-expanded="true"]::after { transform: scaleX(1); }
+.nav-arrow { font-size: 9px; opacity: 0.55; transition: transform 0.2s; }
+.nav-link[aria-expanded="true"] .nav-arrow { transform: rotate(180deg); }
+/* Dropdown */
+.dropdown {
+  position: absolute; top: calc(100% + 6px); left: 0; min-width: 220px;
+  background: var(--white); border: 1px solid var(--border);
+  border-top: 3px solid var(--gold);
+  box-shadow: var(--shadow-lg);
+  opacity: 0; pointer-events: none;
+  transform: translateY(-8px);
+  transition: var(--transition); z-index: 100;
+}
+.nav-item:hover .dropdown,
+.dropdown:focus-within { opacity: 1; pointer-events: all; transform: translateY(0); }
+.dropdown a {
+  display: flex; align-items: center; gap: 8px;
+  padding: 10px 16px; font-size: 13px; color: var(--text-mid);
+  text-decoration: none; font-weight: 400;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  transition: all 0.15s;
+}
+.dropdown a::before { content: '›'; color: var(--gold); font-size: 14px; }
+.dropdown a:hover { background: var(--off-white); color: var(--navy); padding-left: 22px; }
+/* Nav actions */
+.nav-actions { margin-left: auto; display: flex; align-items: center; gap: 10px; }
+.search-wrap { position: relative; }
+.search-input-row { display: flex; align-items: stretch; border: 1px solid var(--steel-light); overflow: hidden; transition: border-color 0.2s; }
+.search-input-row:focus-within { border-color: var(--gold); }
+#nav-search { border: none; outline: none; padding: 8px 14px; font-size: 13px; color: var(--text-dark); background: transparent; width: 180px; font-family: 'DM Sans', sans-serif; }
+.search-btn { border: none; background: var(--navy); color: var(--gold); padding: 0 14px; cursor: pointer; font-size: 14px; transition: background 0.2s; }
+.search-btn:hover { background: var(--gold); color: var(--navy); }
+/* Search results dropdown */
+.search-results {
+  position: absolute; top: 100%; left: 0; right: 0;
+  background: var(--white); border: 1px solid var(--border);
+  border-top: none; box-shadow: var(--shadow-md);
+  display: none; z-index: 200;
+}
+.search-results.visible { display: block; }
+.sr-item { display: flex; align-items: center; gap: 10px; padding: 10px 14px; font-size: 13px; color: var(--text-mid); border-bottom: 1px solid rgba(0,0,0,0.05); cursor: pointer; transition: background 0.15s; }
+.sr-item:hover { background: var(--off-white); color: var(--navy); }
+.sr-icon { font-size: 14px; }
+/* Mobile hamburger */
+.hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; padding: 8px; cursor: pointer; }
+.hamburger span { display: block; width: 24px; height: 2px; background: var(--navy); transition: var(--transition); }
+.hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px,5px); }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px,-5px); }
+
+/* ═══════════════════════════════════════════════════════════
+   BREADCRUMB
+═══════════════════════════════════════════════════════════ */
+.breadcrumb-bar { background: var(--off-white); border-bottom: 1px solid var(--border-light); padding: 8px 0; }
+.breadcrumb { display: flex; align-items: center; gap: 8px; list-style: none; flex-wrap: wrap; }
+.breadcrumb li { display: flex; align-items: center; gap: 8px; font-size: 12px; color: var(--steel); }
+.breadcrumb li a { color: var(--text-mid); text-decoration: none; transition: color 0.2s; }
+.breadcrumb li a:hover { color: var(--gold); }
+.breadcrumb li:last-child { color: var(--navy); font-weight: 500; }
+.breadcrumb-sep { color: var(--steel-light); font-size: 10px; }
+
+/* ═══════════════════════════════════════════════════════════
+   ALERT TICKER
+═══════════════════════════════════════════════════════════ */
+.alert-bar { background: var(--navy-mid); padding: 9px 0; overflow: hidden; display: flex; align-items: center; border-bottom: 1px solid rgba(201,168,76,0.1); }
+.alert-label { flex-shrink: 0; background: var(--gold); color: var(--navy); font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; padding: 4px 16px; margin-right: 20px; }
+.ticker-wrap { overflow: hidden; flex: 1; }
+.ticker { display: inline-flex; gap: 60px; animation: ticker 40s linear infinite; white-space: nowrap; }
+.ticker:hover { animation-play-state: paused; }
+@keyframes ticker { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
+.ticker-item { font-size: 12px; color: var(--steel-light); display: flex; align-items: center; gap: 10px; }
+.ticker-dot { width: 5px; height: 5px; background: var(--gold); border-radius: 50%; flex-shrink: 0; }
+
+/* ═══════════════════════════════════════════════════════════
+   HERO
+═══════════════════════════════════════════════════════════ */
+.hero { background: var(--navy); min-height: 86vh; position: relative; display: flex; align-items: center; overflow: hidden; }
+.hero-bg { position: absolute; inset: 0; z-index: 0; }
+.hero-bg svg { position: absolute; width: 100%; height: 100%; opacity: 0.08; }
+.hero-line { position: absolute; width: 1px; top: 0; height: 100%; background: linear-gradient(to bottom, transparent, var(--gold), transparent); animation: linePulse 4s ease-in-out infinite; }
+@keyframes linePulse { 0%,100%{opacity:0.15} 50%{opacity:0.7} }
+.hero-orb { position: absolute; border-radius: 50%; filter: blur(90px); opacity: 0.12; animation: orbFloat 7s ease-in-out infinite; }
+@keyframes orbFloat { 0%,100%{transform:scale(1) translateY(0)} 50%{transform:scale(1.1) translateY(-20px)} }
+.hero .container { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; position: relative; z-index: 1; padding-top: 60px; padding-bottom: 60px; }
+.hero-eyebrow { display: flex; align-items: center; gap: 12px; margin-bottom: 24px; }
+.eyebrow-line { width: 36px; height: 1px; background: var(--gold); }
+.eyebrow-text { font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); }
+.hero-title { font-family: 'Playfair Display', serif; font-size: clamp(32px,4.2vw,58px); font-weight: 900; line-height: 1.08; color: var(--white); margin-bottom: 22px; }
+.hero-title em { font-style: italic; color: var(--gold); }
+.hero-subtitle { font-size: 15.5px; line-height: 1.75; color: var(--steel-light); margin-bottom: 36px; font-weight: 300; }
+.hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; }
+.hero-stats { display: flex; gap: 28px; margin-top: 48px; padding-top: 28px; border-top: 1px solid rgba(139,163,191,0.2); }
+.hs-num { font-family: 'Playfair Display', serif; font-size: 30px; font-weight: 700; color: var(--gold); line-height: 1; }
+.hs-label { font-size: 10.5px; color: var(--steel); text-transform: uppercase; letter-spacing: 1.5px; margin-top: 4px; }
+/* Dashboard card */
+.hero-right { display: flex; justify-content: flex-end; align-items: center; }
+.dash-card {
+  background: rgba(255,255,255,0.04); border: 1px solid rgba(201,168,76,0.2);
+  backdrop-filter: blur(12px); width: 100%; max-width: 450px; padding: 24px;
+  animation: cardFloat 6s ease-in-out infinite;
+}
+@keyframes cardFloat { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
+.dc-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px; padding-bottom: 14px; border-bottom: 1px solid rgba(201,168,76,0.15); }
+.dc-title { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 2px; color: var(--gold); text-transform: uppercase; }
+.live-badge { display: flex; align-items: center; gap: 6px; font-size: 10px; color: var(--green); font-family: 'JetBrains Mono', monospace; }
+.live-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--green); animation: livePulse 1.8s ease-out infinite; }
+@keyframes livePulse { 0%{box-shadow:0 0 0 0 rgba(39,174,96,.5)} 70%{box-shadow:0 0 0 8px transparent} 100%{box-shadow:0 0 0 0 transparent} }
+.dc-metrics { display: grid; grid-template-columns: repeat(2,1fr); gap: 10px; margin-bottom: 16px; }
+.dc-metric { background: rgba(255,255,255,0.04); border: 1px solid rgba(139,163,191,0.1); padding: 12px 14px; }
+.dcm-val { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: var(--white); line-height: 1; }
+.dcm-val.up { color: var(--green); }
+.dcm-val.warn { color: var(--gold); }
+.dcm-label { font-size: 10px; color: var(--steel); margin-top: 3px; }
+.dc-barchart { margin-bottom: 14px; }
+.dc-chart-label { font-size: 10px; color: var(--steel); font-family: 'JetBrains Mono', monospace; margin-bottom: 7px; }
+.bars { display: flex; gap: 5px; align-items: flex-end; height: 50px; }
+.bar { flex: 1; background: rgba(201,168,76,0.18); border-top: 2px solid var(--gold); transition: background 0.3s; }
+.bar:hover { background: rgba(201,168,76,0.45); }
+.dc-list { display: flex; flex-direction: column; gap: 7px; }
+.dc-list-row { display: flex; justify-content: space-between; align-items: center; padding: 7px 10px; background: rgba(255,255,255,0.03); border-left: 2px solid var(--gold); font-size: 11px; color: var(--steel-light); }
+.dc-badge { font-family: 'JetBrains Mono', monospace; font-size: 9px; padding: 2px 7px; }
+.dc-badge.new-b { background: rgba(39,174,96,.15); color: var(--green); }
+.dc-badge.warn-b { background: rgba(230,126,34,.15); color: var(--orange); }
+.dc-badge.info-b { background: rgba(201,168,76,.15); color: var(--gold); }
+
+/* ═══════════════════════════════════════════════════════════
+   QUICK SERVICES
+═══════════════════════════════════════════════════════════ */
+.quick-services { background: var(--off-white); border-bottom: 1px solid var(--border); }
+.qs-grid { display: grid; grid-template-columns: repeat(6,1fr); }
+.qs-item { display: flex; flex-direction: column; align-items: center; gap: 9px; padding: 26px 16px; text-align: center; text-decoration: none; border-right: 1px solid var(--border); background: transparent; border-top: none; border-left: none; border-bottom: none; cursor: pointer; transition: var(--transition); position: relative; }
+.qs-item:last-child { border-right: none; }
+.qs-item::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px; background: var(--gold); transform: scaleX(0); transition: transform 0.3s ease; }
+.qs-item:hover { background: var(--white); }
+.qs-item:hover::after { transform: scaleX(1); }
+.qs-icon { width: 44px; height: 44px; background: var(--navy); display: flex; align-items: center; justify-content: center; font-size: 18px; clip-path: polygon(50% 0%,100% 25%,100% 75%,50% 100%,0% 75%,0% 25%); transition: background 0.3s; }
+.qs-item:hover .qs-icon { background: var(--gold); }
+.qs-label { font-size: 11.5px; font-weight: 600; color: var(--navy); line-height: 1.3; }
+
+/* ═══════════════════════════════════════════════════════════
+   SECTIONS — ABOUT
+═══════════════════════════════════════════════════════════ */
+.section { padding: 88px 0; }
+.about-section { background: var(--white); position: relative; overflow: hidden; }
+.about-watermark { position: absolute; right: -30px; top: 50%; transform: translateY(-50%); font-family: 'Playfair Display', serif; font-size: 160px; font-weight: 900; color: var(--off-white); line-height: 1; user-select: none; pointer-events: none; letter-spacing: -8px; }
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; position: relative; }
+.mandate-list { list-style: none; display: flex; flex-direction: column; gap: 11px; margin-top: 22px; }
+.mandate-list li { display: flex; align-items: flex-start; gap: 11px; font-size: 14px; color: var(--text-mid); line-height: 1.55; }
+.mandate-check { width: 20px; height: 20px; flex-shrink: 0; background: var(--navy); color: var(--gold); font-size: 10px; font-weight: 700; display: flex; align-items: center; justify-content: center; margin-top: 2px; }
+.metric-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.metric-card { background: var(--navy); padding: 26px 22px; position: relative; overflow: hidden; transition: transform 0.3s; }
+.metric-card:hover { transform: translateY(-4px); }
+.metric-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--gold); }
+.metric-card:nth-child(2n) { margin-top: 18px; }
+.mc-num { font-family: 'Playfair Display', serif; font-size: 34px; font-weight: 700; color: var(--gold); line-height: 1; }
+.mc-label { font-size: 11.5px; color: var(--steel); margin-top: 5px; line-height: 1.4; }
+
+/* ═══════════════════════════════════════════════════════════
+   SECTORS
+═══════════════════════════════════════════════════════════ */
+.sectors-section { background: var(--navy); position: relative; overflow: hidden; }
+.sectors-grid-bg { position: absolute; inset: 0; background-image: repeating-linear-gradient(0deg,rgba(255,255,255,.02) 0,rgba(255,255,255,.02) 1px,transparent 1px,transparent 60px),repeating-linear-gradient(90deg,rgba(255,255,255,.02) 0,rgba(255,255,255,.02) 1px,transparent 1px,transparent 60px); }
+.sector-cards { display: grid; grid-template-columns: repeat(4,1fr); gap: 1px; background: rgba(201,168,76,0.12); position: relative; }
+.sector-card { background: var(--navy); padding: 34px 26px; transition: var(--transition); cursor: pointer; position: relative; overflow: hidden; }
+.sector-card::after { content: ''; position: absolute; inset: 0; background: var(--gold); opacity: 0; transition: opacity 0.3s; }
+.sector-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(0,0,0,0.4); }
+.sector-card:hover::after { opacity: 0.04; }
+.sector-card > * { position: relative; z-index: 1; }
+.sector-icon { font-size: 34px; margin-bottom: 14px; display: block; }
+.sector-name { font-family: 'Playfair Display', serif; font-size: 17px; font-weight: 700; color: var(--white); margin-bottom: 9px; line-height: 1.3; }
+.sector-desc { font-size: 13px; color: var(--steel); line-height: 1.65; margin-bottom: 18px; }
+.sector-link { font-size: 11px; color: var(--gold); font-family: 'JetBrains Mono', monospace; letter-spacing: 1px; text-decoration: none; display: flex; align-items: center; gap: 8px; transition: gap 0.2s; }
+.sector-card:hover .sector-link { gap: 14px; }
+
+/* ═══════════════════════════════════════════════════════════
+   SERVICES PORTAL
+═══════════════════════════════════════════════════════════ */
+.services-section { background: var(--off-white); }
+.sp-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 40px; flex-wrap: wrap; gap: 16px; }
+.sp-tabs { display: flex; border: 1px solid var(--border); overflow: hidden; }
+.sp-tab { padding: 9px 22px; font-size: 13px; font-weight: 500; cursor: pointer; border: none; background: transparent; color: var(--text-mid); border-right: 1px solid var(--border); transition: var(--transition); font-family: 'DM Sans', sans-serif; }
+.sp-tab:last-child { border-right: none; }
+.sp-tab.active, .sp-tab:hover { background: var(--navy); color: var(--gold); }
+.sp-tab[aria-selected="true"] { background: var(--navy); color: var(--gold); }
+.service-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 22px; }
+.service-card { background: var(--white); border: 1px solid var(--border); padding: 30px; transition: var(--transition); cursor: pointer; position: relative; }
+.service-card::before { content: ''; position: absolute; top: 0; left: 0; bottom: 0; width: 3px; background: var(--gold); transform: scaleY(0); transition: transform 0.3s ease; }
+.service-card:hover { box-shadow: var(--shadow-md); transform: translateX(3px); }
+.service-card:hover::before { transform: scaleY(1); }
+.sc-cat { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 2px; color: var(--steel); text-transform: uppercase; margin-bottom: 10px; }
+.sc-title { font-family: 'Playfair Display', serif; font-size: 17px; font-weight: 700; color: var(--navy); margin-bottom: 9px; }
+.sc-desc { font-size: 13px; color: var(--text-mid); line-height: 1.65; margin-bottom: 18px; }
+.sc-action { font-size: 13px; font-weight: 600; color: var(--gold); display: flex; align-items: center; gap: 7px; transition: gap 0.2s; text-decoration: none; cursor: pointer; background: none; border: none; }
+.service-card:hover .sc-action { gap: 13px; }
+.sc-meta { display: flex; gap: 14px; margin-top: 14px; padding-top: 14px; border-top: 1px solid rgba(0,0,0,0.06); }
+.sc-meta-item { font-size: 11px; color: var(--steel); }
+
+/* ═══════════════════════════════════════════════════════════
+   NEWS
+═══════════════════════════════════════════════════════════ */
+.news-section { background: var(--white); }
+.news-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 40px; flex-wrap: wrap; gap: 16px; }
+.news-layout { display: grid; grid-template-columns: 2fr 1fr; gap: 28px; }
+.news-featured { border: 1px solid var(--border); overflow: hidden; cursor: pointer; transition: var(--transition); }
+.news-featured:hover { box-shadow: var(--shadow-md); }
+.nf-img { height: 240px; background: var(--navy); position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+.nf-img-bg { position: absolute; inset: 0; background: linear-gradient(135deg,var(--navy-mid),var(--navy-light)); }
+.nf-pattern { position: absolute; inset: 0; background-image: repeating-linear-gradient(45deg,rgba(201,168,76,.05) 0,rgba(201,168,76,.05) 2px,transparent 2px,transparent 40px); }
+.nf-ghost { position: relative; z-index: 1; font-family: 'Playfair Display', serif; font-size: 56px; font-weight: 900; color: rgba(201,168,76,.18); }
+.nf-badge { position: absolute; top: 18px; left: 18px; z-index: 2; background: var(--gold); color: var(--navy); font-family: 'JetBrains Mono', monospace; font-size: 9px; font-weight: 700; letter-spacing: 2px; padding: 4px 12px; text-transform: uppercase; }
+.nf-body { padding: 26px; }
+.news-date { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--steel); letter-spacing: 1.5px; margin-bottom: 9px; }
+.news-title { font-family: 'Playfair Display', serif; font-size: 19px; font-weight: 700; color: var(--navy); line-height: 1.3; margin-bottom: 11px; }
+.news-excerpt { font-size: 13px; color: var(--text-mid); line-height: 1.7; }
+.news-list { display: flex; flex-direction: column; }
+.nl-item { display: flex; gap: 14px; align-items: flex-start; padding: 18px 0; border-bottom: 1px solid rgba(0,0,0,0.07); cursor: pointer; transition: var(--transition); }
+.nl-item:hover .nl-title { color: var(--gold); }
+.nl-num { font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 700; color: var(--steel-light); line-height: 1; flex-shrink: 0; width: 32px; text-align: right; }
+.nl-tag { font-family: 'JetBrains Mono', monospace; font-size: 9.5px; color: var(--gold); letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 5px; }
+.nl-title { font-size: 13.5px; font-weight: 600; color: var(--navy); line-height: 1.4; transition: color 0.2s; }
+.nl-date { font-size: 10.5px; color: var(--steel); margin-top: 4px; }
+
+/* ═══════════════════════════════════════════════════════════
+   COMPLAINT / CONSUMER
+═══════════════════════════════════════════════════════════ */
+.consumer-section { background: var(--navy); position: relative; overflow: hidden; }
+.consumer-section::before { content: ''; position: absolute; bottom: -120px; right: -120px; width: 550px; height: 550px; border: 70px solid rgba(201,168,76,.05); border-radius: 50%; }
+.consumer-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; position: relative; }
+.complaint-form { background: rgba(255,255,255,.04); border: 1px solid rgba(201,168,76,.2); padding: 28px; }
+.cf-title { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 2px; color: var(--gold); text-transform: uppercase; margin-bottom: 20px; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
+.form-full { grid-column: 1/-1; }
+.form-group { display: flex; flex-direction: column; gap: 5px; }
+.form-group label { font-size: 11px; color: var(--steel); font-weight: 500; letter-spacing: 0.5px; }
+.form-group input, .form-group select, .form-group textarea {
+  background: rgba(255,255,255,.05); border: 1px solid rgba(139,163,191,.2);
+  color: var(--white); padding: 10px 14px; font-size: 13px;
+  font-family: 'DM Sans', sans-serif; outline: none; transition: border-color 0.2s;
+}
+.form-group input::placeholder { color: var(--steel); }
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--gold); }
+.form-group input.invalid { border-color: var(--red); }
+.form-group input.valid { border-color: var(--green); }
+.form-err { font-size: 11px; color: var(--red); margin-top: 2px; display: none; }
+.form-group.has-error .form-err { display: block; }
+.form-group select { appearance: none; }
+.form-group textarea { resize: vertical; min-height: 80px; }
+.progress-steps { display: flex; gap: 0; margin-bottom: 22px; }
+.ps-step { flex: 1; text-align: center; font-size: 10px; font-family: 'JetBrains Mono', monospace; color: var(--steel); letter-spacing: 1px; text-transform: uppercase; padding: 8px 4px; border-bottom: 2px solid rgba(139,163,191,.2); transition: var(--transition); }
+.ps-step.active { color: var(--gold); border-bottom-color: var(--gold); }
+.ps-step.done { color: var(--green); border-bottom-color: var(--green); }
+.consumer-tools { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.ct-card { background: rgba(255,255,255,.04); border: 1px solid rgba(139,163,191,.1); padding: 22px 18px; transition: var(--transition); cursor: pointer; }
+.ct-card:hover { border-color: rgba(201,168,76,.4); background: rgba(201,168,76,.04); }
+.ct-icon { font-size: 26px; margin-bottom: 10px; display: block; }
+.ct-title { font-size: 13.5px; font-weight: 600; color: var(--white); margin-bottom: 6px; }
+.ct-desc { font-size: 12px; color: var(--steel); line-height: 1.5; }
+
+/* Complaint Tracker */
+.tracker-section { background: rgba(255,255,255,.03); border: 1px solid rgba(201,168,76,.15); padding: 20px 24px; margin-top: 20px; }
+.tracker-title { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 2px; color: var(--gold); text-transform: uppercase; margin-bottom: 14px; }
+.tracker-input-row { display: flex; gap: 0; overflow: hidden; border: 1px solid rgba(139,163,191,.2); }
+.tracker-input-row input { flex: 1; background: rgba(255,255,255,.05); border: none; outline: none; padding: 10px 14px; color: var(--white); font-family: 'DM Sans', sans-serif; font-size: 13px; }
+.tracker-input-row input::placeholder { color: var(--steel); }
+.tracker-input-row button { background: var(--gold); color: var(--navy); border: none; padding: 0 18px; font-weight: 600; font-size: 13px; cursor: pointer; font-family: 'DM Sans', sans-serif; transition: background 0.2s; }
+.tracker-input-row button:hover { background: var(--gold-light); }
+.tracker-result { margin-top: 14px; display: none; }
+.tracker-result.visible { display: block; }
+.tr-status { display: flex; align-items: center; gap: 10px; padding: 12px 14px; background: rgba(39,174,96,.08); border: 1px solid rgba(39,174,96,.25); border-left: 4px solid var(--green); }
+.trs-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--green); }
+.trs-text { font-size: 13px; color: var(--white); }
+.trs-detail { font-size: 11px; color: var(--steel); margin-top: 2px; }
+
+/* ═══════════════════════════════════════════════════════════
+   CYBERSECURITY
+═══════════════════════════════════════════════════════════ */
+.cyber-section { background: var(--off-white); }
+.cyber-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: start; }
+.cyber-alerts { display: flex; flex-direction: column; gap: 11px; }
+.cyber-alert { display: flex; gap: 14px; align-items: flex-start; padding: 16px 18px; background: var(--white); border: 1px solid var(--border); border-left: 4px solid var(--gold); cursor: pointer; transition: var(--transition); }
+.cyber-alert:hover { box-shadow: var(--shadow-sm); }
+.cyber-alert.critical { border-left-color: var(--red); }
+.cyber-alert.moderate { border-left-color: var(--orange); }
+.cyber-alert.info-a { border-left-color: var(--blue); }
+.ca-sev { font-family: 'JetBrains Mono', monospace; font-size: 9.5px; font-weight: 700; letter-spacing: 1px; padding: 3px 8px; flex-shrink: 0; margin-top: 2px; }
+.ca-sev.critical { background: rgba(192,57,43,.1); color: var(--red); }
+.ca-sev.moderate { background: rgba(230,126,34,.1); color: var(--orange); }
+.ca-sev.info-a { background: rgba(41,128,185,.1); color: var(--blue); }
+.ca-sev.low { background: rgba(201,168,76,.1); color: var(--gold); }
+.ca-title { font-size: 13.5px; font-weight: 600; color: var(--navy); margin-bottom: 3px; }
+.ca-desc { font-size: 12px; color: var(--text-mid); line-height: 1.55; }
+.ca-date { font-size: 10.5px; color: var(--steel); margin-top: 5px; font-family: 'JetBrains Mono', monospace; }
+.cyber-tools { display: flex; flex-direction: column; gap: 14px; }
+.ct-tool { background: var(--navy); padding: 24px; cursor: pointer; transition: transform 0.25s; position: relative; overflow: hidden; }
+.ct-tool::before { content: ''; position: absolute; top: 0; right: 0; width: 70px; height: 70px; background: var(--gold); opacity: .03; border-radius: 0 0 0 70px; }
+.ct-tool:hover { transform: translateX(6px); }
+.ct-tool-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px; }
+.ct-tool-title { font-size: 14px; font-weight: 600; color: var(--white); }
+.ct-tool-badge { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--gold); border: 1px solid rgba(201,168,76,.3); padding: 2px 8px; }
+.ct-tool-desc { font-size: 12.5px; color: var(--steel); line-height: 1.55; }
+
+/* ═══════════════════════════════════════════════════════════
+   PUBLICATIONS
+═══════════════════════════════════════════════════════════ */
+.publications-section { background: var(--white); }
+.pub-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 40px; flex-wrap: wrap; gap: 16px; }
+.pub-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 22px; }
+.pub-card { border: 1px solid var(--border); overflow: hidden; cursor: pointer; transition: var(--transition); }
+.pub-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); }
+.pub-cover { height: 130px; background: var(--navy); display: flex; align-items: center; justify-content: center; position: relative; }
+.pub-ghost { font-family: 'Playfair Display', serif; font-size: 52px; font-weight: 900; color: rgba(201,168,76,.14); line-height: 1; }
+.pub-cover-icon { position: absolute; font-size: 30px; }
+.pub-type-badge { position: absolute; top: 10px; left: 10px; background: var(--gold); color: var(--navy); font-family: 'JetBrains Mono', monospace; font-size: 8.5px; font-weight: 700; letter-spacing: 2px; padding: 3px 9px; text-transform: uppercase; }
+.pub-body { padding: 18px; }
+.pub-title { font-size: 13.5px; font-weight: 600; color: var(--navy); margin-bottom: 6px; line-height: 1.4; }
+.pub-meta { font-size: 11px; color: var(--steel); margin-bottom: 12px; }
+.pub-dl { display: flex; align-items: center; gap: 7px; font-size: 12px; color: var(--gold); font-weight: 600; transition: gap 0.2s; text-decoration: none; }
+.pub-card:hover .pub-dl { gap: 13px; }
+
+/* ═══════════════════════════════════════════════════════════
+   CONSULTATIONS
+═══════════════════════════════════════════════════════════ */
+.consultations-section { background: var(--navy-mid); }
+.cons-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.cons-card { background: rgba(255,255,255,.04); border: 1px solid rgba(201,168,76,.14); padding: 26px; transition: var(--transition); cursor: pointer; }
+.cons-card:hover { border-color: rgba(201,168,76,.4); background: rgba(201,168,76,.04); }
+.cons-status-row { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; }
+.cons-dot { width: 7px; height: 7px; border-radius: 50%; }
+.cons-dot.open { background: var(--green); box-shadow: 0 0 0 3px rgba(39,174,96,.2); animation: livePulse 2s infinite; }
+.cons-dot.closing { background: var(--orange); }
+.cons-dot.closed { background: #555; }
+.cons-status-txt { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; }
+.cons-status-txt.open { color: var(--green); }
+.cons-status-txt.closing { color: var(--orange); }
+.cons-status-txt.closed { color: #666; }
+.cons-title { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700; color: var(--white); margin-bottom: 9px; line-height: 1.3; }
+.cons-desc { font-size: 12.5px; color: var(--steel); line-height: 1.65; margin-bottom: 14px; }
+.cons-footer { display: flex; justify-content: space-between; align-items: center; }
+.cons-deadline { font-size: 10.5px; color: var(--steel); font-family: 'JetBrains Mono', monospace; }
+.cons-cta { font-size: 12px; color: var(--gold); font-weight: 600; display: flex; align-items: center; gap: 6px; transition: gap 0.2s; text-decoration: none; cursor: pointer; }
+.cons-card:hover .cons-cta { gap: 12px; }
+
+/* ═══════════════════════════════════════════════════════════
+   STATISTICS
+═══════════════════════════════════════════════════════════ */
+.stats-section { background: var(--off-white); }
+.stats-header { text-align: center; margin-bottom: 52px; }
+.stats-layout { display: grid; grid-template-columns: 2fr 1fr; gap: 28px; }
+.sd-left { display: flex; flex-direction: column; gap: 22px; }
+.sd-metrics { display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; }
+.sd-metric { background: var(--white); border: 1px solid var(--border); padding: 22px; position: relative; }
+.sd-metric::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px; background: var(--gold); }
+.sd-num { font-family: 'Playfair Display', serif; font-size: 34px; font-weight: 700; color: var(--navy); line-height: 1; }
+.sd-suffix { font-size: 18px; color: var(--gold); }
+.sd-label { font-size: 11px; color: var(--steel); margin-top: 5px; }
+.sd-trend { font-family: 'JetBrains Mono', monospace; font-size: 10.5px; font-weight: 600; margin-top: 6px; }
+.sd-trend.up { color: var(--green); }
+.sd-trend.dn { color: var(--red); }
+.chart-box { background: var(--white); border: 1px solid var(--border); padding: 22px; }
+.cb-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
+.cb-title { font-family: 'Playfair Display', serif; font-size: 15px; font-weight: 700; color: var(--navy); }
+.legend { display: flex; gap: 14px; }
+.legend-item { display: flex; align-items: center; gap: 5px; font-size: 11px; color: var(--text-mid); }
+.legend-dot { width: 8px; height: 8px; border-radius: 50%; }
+.area-svg { width: 100%; height: 110px; }
+.sd-right { display: flex; flex-direction: column; gap: 14px; }
+.panel { background: var(--white); border: 1px solid var(--border); padding: 18px; }
+.panel-title { font-family: 'Playfair Display', serif; font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 14px; padding-bottom: 10px; border-bottom: 1px solid var(--border); }
+.donut-row { display: flex; gap: 16px; align-items: center; }
+.donut-legend { flex: 1; display: flex; flex-direction: column; gap: 8px; }
+.dl-item { display: flex; align-items: center; gap: 7px; }
+.dl-color { width: 9px; height: 9px; flex-shrink: 0; }
+.dl-label { font-size: 11.5px; color: var(--text-mid); flex: 1; }
+.dl-pct { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--navy); font-weight: 600; }
+.activity-feed { display: flex; flex-direction: column; gap: 9px; }
+.af-item { display: flex; gap: 10px; align-items: flex-start; padding-bottom: 9px; border-bottom: 1px solid rgba(0,0,0,.05); }
+.af-item:last-child { border-bottom: none; padding-bottom: 0; }
+.af-icon { width: 30px; height: 30px; background: var(--off-white); display: flex; align-items: center; justify-content: center; font-size: 13px; flex-shrink: 0; }
+.af-text { font-size: 12px; color: var(--text-mid); line-height: 1.4; }
+.af-time { font-size: 10.5px; color: var(--steel); margin-top: 2px; font-family: 'JetBrains Mono', monospace; }
+
+/* ═══════════════════════════════════════════════════════════
+   DOMAIN REGISTRY
+═══════════════════════════════════════════════════════════ */
+.domain-section { background: var(--navy); position: relative; overflow: hidden; }
+.domain-section::before { content: '.BW'; position: absolute; right: -50px; top: 50%; transform: translateY(-50%); font-family: 'Playfair Display', serif; font-size: 200px; font-weight: 900; color: rgba(255,255,255,.025); user-select: none; }
+.domain-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; position: relative; }
+.domain-search-bar { display: flex; overflow: hidden; border: 1px solid rgba(201,168,76,.3); margin-bottom: 20px; }
+.ds-input { flex: 1; padding: 13px 18px; background: rgba(255,255,255,.05); border: none; outline: none; color: var(--white); font-size: 14px; font-family: 'DM Sans', sans-serif; }
+.ds-input::placeholder { color: var(--steel); }
+.ds-ext { padding: 0 14px; background: rgba(255,255,255,.05); border-left: 1px solid rgba(201,168,76,.2); color: var(--gold); font-family: 'JetBrains Mono', monospace; font-size: 14px; display: flex; align-items: center; }
+.ds-btn { padding: 0 22px; background: var(--gold); color: var(--navy); border: none; cursor: pointer; font-weight: 600; font-size: 14px; font-family: 'DM Sans', sans-serif; transition: background 0.2s; }
+.ds-btn:hover { background: var(--gold-light); }
+.ds-result { margin-bottom: 20px; display: none; }
+.ds-result.visible { display: block; }
+.ds-available { padding: 12px 16px; background: rgba(39,174,96,.08); border: 1px solid rgba(39,174,96,.3); border-left: 4px solid var(--green); display: flex; justify-content: space-between; align-items: center; }
+.ds-taken { padding: 12px 16px; background: rgba(192,57,43,.08); border: 1px solid rgba(192,57,43,.3); border-left: 4px solid var(--red); }
+.ds-result-text { font-size: 13px; color: var(--white); }
+.ds-result-detail { font-size: 11px; color: var(--steel); margin-top: 2px; }
+.tld-pills { display: flex; gap: 8px; flex-wrap: wrap; }
+.tld-pill { font-family: 'JetBrains Mono', monospace; font-size: 11px; padding: 5px 13px; border: 1px solid rgba(139,163,191,.2); color: var(--steel); transition: var(--transition); cursor: pointer; }
+.tld-pill:hover { border-color: var(--gold); color: var(--gold); }
+.domain-stats { display: flex; flex-direction: column; gap: 14px; }
+.ds-stat { background: rgba(255,255,255,.04); border: 1px solid rgba(139,163,191,.1); padding: 18px 22px; display: flex; justify-content: space-between; align-items: center; transition: var(--transition); }
+.ds-stat:hover { border-color: rgba(201,168,76,.3); }
+.ds-stat-label { font-size: 13px; color: var(--steel); }
+.ds-stat-val { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: var(--gold); }
+
+/* ═══════════════════════════════════════════════════════════
+   SECURITY & DATA PROTECTION
+═══════════════════════════════════════════════════════════ */
+.security-section { background: var(--white); }
+.sec-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: start; }
+.security-badges { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.sec-badge { background: var(--off-white); border: 1px solid var(--border); padding: 22px; text-align: center; transition: var(--transition); }
+.sec-badge:hover { border-color: var(--gold); box-shadow: var(--shadow-sm); }
+.sec-badge-icon { font-size: 32px; margin-bottom: 10px; display: block; }
+.sec-badge-title { font-size: 13px; font-weight: 600; color: var(--navy); margin-bottom: 5px; }
+.sec-badge-desc { font-size: 11.5px; color: var(--text-mid); line-height: 1.5; }
+.sec-badge-check { display: inline-block; background: var(--green); color: var(--white); font-size: 10px; font-weight: 700; padding: 2px 8px; margin-top: 8px; font-family: 'JetBrains Mono', monospace; }
+.data-protection-list { display: flex; flex-direction: column; gap: 14px; margin-top: 20px; }
+.dp-item { display: flex; gap: 14px; padding: 16px; background: var(--off-white); border: 1px solid var(--border); transition: var(--transition); }
+.dp-item:hover { border-color: var(--gold); background: var(--white); }
+.dp-icon { font-size: 22px; flex-shrink: 0; }
+.dp-title { font-size: 13.5px; font-weight: 600; color: var(--navy); margin-bottom: 4px; }
+.dp-desc { font-size: 12px; color: var(--text-mid); line-height: 1.55; }
+.sec-compliance { background: var(--navy); padding: 28px; margin-top: 24px; }
+.sec-comp-title { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 2px; color: var(--gold); text-transform: uppercase; margin-bottom: 16px; }
+.comp-list { display: flex; flex-direction: column; gap: 10px; }
+.comp-item { display: flex; justify-content: space-between; align-items: center; padding: 10px 14px; background: rgba(255,255,255,.03); }
+.comp-name { font-size: 12.5px; color: var(--steel-light); }
+.comp-status { font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 600; padding: 2px 8px; }
+.comp-status.compliant { background: rgba(39,174,96,.15); color: var(--green); }
+.comp-status.partial { background: rgba(230,126,34,.15); color: var(--orange); }
+.comp-bar-wrap { width: 80px; height: 4px; background: rgba(255,255,255,.08); }
+.comp-bar { height: 100%; background: var(--green); }
+.comp-bar.partial { background: var(--orange); }
+
+/* ═══════════════════════════════════════════════════════════
+   API & INTEGRATION
+═══════════════════════════════════════════════════════════ */
+.integration-section { background: var(--navy-mid); }
+.integration-header { text-align: center; margin-bottom: 52px; }
+.integration-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
+.api-showcase { background: rgba(255,255,255,.03); border: 1px solid rgba(201,168,76,.18); padding: 28px; }
+.api-tabs { display: flex; gap: 0; margin-bottom: 18px; }
+.api-tab { padding: 7px 18px; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; cursor: pointer; border: none; background: rgba(255,255,255,.04); color: var(--steel); border-right: 1px solid rgba(201,168,76,.15); transition: var(--transition); }
+.api-tab:last-child { border-right: none; }
+.api-tab.active { background: rgba(201,168,76,.12); color: var(--gold); }
+.code-block { background: rgba(0,0,0,.4); border: 1px solid rgba(201,168,76,.1); padding: 20px; font-family: 'JetBrains Mono', monospace; font-size: 11.5px; line-height: 1.7; color: var(--steel-light); overflow-x: auto; position: relative; }
+.code-block .kw { color: var(--gold); }
+.code-block .str { color: #98C379; }
+.code-block .key { color: #61AFEF; }
+.code-block .val { color: #E5C07B; }
+.copy-code-btn { position: absolute; top: 12px; right: 12px; background: rgba(201,168,76,.15); color: var(--gold); border: 1px solid rgba(201,168,76,.25); padding: 4px 12px; font-family: 'JetBrains Mono', monospace; font-size: 10px; cursor: pointer; letter-spacing: 1px; transition: var(--transition); }
+.copy-code-btn:hover { background: rgba(201,168,76,.3); }
+.integration-systems { display: flex; flex-direction: column; gap: 14px; }
+.int-sys { background: rgba(255,255,255,.03); border: 1px solid rgba(139,163,191,.12); padding: 20px; display: flex; gap: 16px; align-items: flex-start; transition: var(--transition); }
+.int-sys:hover { border-color: rgba(201,168,76,.3); }
+.int-sys-icon { width: 44px; height: 44px; background: var(--navy); border: 1px solid rgba(201,168,76,.2); display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; }
+.int-sys-name { font-size: 14px; font-weight: 600; color: var(--white); margin-bottom: 4px; }
+.int-sys-desc { font-size: 12px; color: var(--steel); line-height: 1.5; }
+.int-status { display: flex; align-items: center; gap: 6px; margin-top: 7px; }
+.int-dot { width: 6px; height: 6px; border-radius: 50%; }
+.int-dot.live { background: var(--green); }
+.int-dot.planned { background: var(--orange); }
+.int-status-txt { font-family: 'JetBrains Mono', monospace; font-size: 9.5px; letter-spacing: 1px; }
+.int-dot.live + .int-status-txt { color: var(--green); }
+.int-dot.planned + .int-status-txt { color: var(--orange); }
+
+/* ═══════════════════════════════════════════════════════════
+   STAKEHOLDERS
+═══════════════════════════════════════════════════════════ */
+.stakeholder-section { background: var(--off-white); }
+.sh-header { text-align: center; margin-bottom: 48px; }
+.sh-cards { display: grid; grid-template-columns: repeat(5,1fr); gap: 20px; }
+.sh-card { background: var(--white); border: 1px solid var(--border); padding: 26px 18px; text-align: center; transition: var(--transition); cursor: pointer; position: relative; overflow: hidden; }
+.sh-card::before { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 0; background: var(--navy); transition: height 0.3s; z-index: 0; }
+.sh-card:hover::before { height: 100%; }
+.sh-card > * { position: relative; z-index: 1; }
+.sh-icon { font-size: 34px; margin-bottom: 12px; display: block; }
+.sh-name { font-size: 12.5px; font-weight: 600; color: var(--navy); transition: color 0.3s; }
+.sh-count { font-family: 'JetBrains Mono', monospace; font-size: 18px; font-weight: 600; color: var(--gold); margin-top: 7px; }
+.sh-card:hover .sh-name { color: var(--white); }
+
+/* ═══════════════════════════════════════════════════════════
+   AI CHATBOT
+═══════════════════════════════════════════════════════════ */
+.chat-fab {
+  position: fixed; bottom: 28px; right: 28px; z-index: 7000;
+  width: 60px; height: 60px; background: var(--gold); color: var(--navy);
+  border: none; border-radius: 50%; font-size: 24px; cursor: pointer;
+  box-shadow: 0 8px 32px rgba(201,168,76,0.5);
+  transition: var(--transition);
+  display: flex; align-items: center; justify-content: center;
+  animation: fabPulse 3s ease-in-out infinite;
+}
+@keyframes fabPulse { 0%,100%{box-shadow:0 8px 32px rgba(201,168,76,.5)} 50%{box-shadow:0 8px 48px rgba(201,168,76,.8)} }
+.chat-fab:hover { transform: scale(1.1); }
+.chat-fab .chat-label { position: absolute; right: 72px; background: var(--navy); color: var(--gold); font-size: 12px; font-weight: 600; padding: 6px 14px; white-space: nowrap; opacity: 0; transition: opacity 0.2s; border: 1px solid rgba(201,168,76,.2); }
+.chat-fab:hover .chat-label { opacity: 1; }
+.chat-window {
+  position: fixed; bottom: 100px; right: 28px; z-index: 7000;
+  width: 380px; height: 520px; background: var(--white);
+  border: 1px solid var(--border); box-shadow: var(--shadow-lg);
+  display: flex; flex-direction: column;
+  transform: scale(0.95) translateY(20px); opacity: 0;
+  pointer-events: none; transition: var(--transition);
+  transform-origin: bottom right;
+}
+.chat-window.open { transform: scale(1) translateY(0); opacity: 1; pointer-events: all; }
+.chat-header { background: var(--navy); padding: 16px 20px; border-bottom: 2px solid var(--gold); display: flex; justify-content: space-between; align-items: center; }
+.chat-header-left { display: flex; align-items: center; gap: 10px; }
+.chat-avatar { width: 36px; height: 36px; background: var(--gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 16px; }
+.chat-title { font-size: 14px; font-weight: 600; color: var(--white); }
+.chat-sub { font-size: 11px; color: var(--green); display: flex; align-items: center; gap: 5px; }
+.chat-close { background: none; border: none; color: var(--steel); font-size: 18px; cursor: pointer; transition: color 0.2s; }
+.chat-close:hover { color: var(--white); }
+.chat-messages { flex: 1; overflow-y: auto; padding: 16px; display: flex; flex-direction: column; gap: 12px; }
+.chat-messages::-webkit-scrollbar { width: 4px; }
+.chat-messages::-webkit-scrollbar-track { background: var(--off-white); }
+.chat-messages::-webkit-scrollbar-thumb { background: var(--steel-light); }
+.chat-msg { max-width: 85%; }
+.chat-msg.bot { align-self: flex-start; }
+.chat-msg.user { align-self: flex-end; }
+.chat-bubble { padding: 10px 14px; font-size: 13px; line-height: 1.55; }
+.chat-msg.bot .chat-bubble { background: var(--off-white); color: var(--text-dark); border: 1px solid var(--border-light); border-bottom-left-radius: 0; }
+.chat-msg.user .chat-bubble { background: var(--navy); color: var(--white); border-bottom-right-radius: 0; }
+.chat-time { font-size: 10px; color: var(--steel); margin-top: 4px; text-align: right; }
+.chat-msg.bot .chat-time { text-align: left; }
+.chat-quick { padding: 10px 16px; display: flex; gap: 7px; flex-wrap: wrap; border-top: 1px solid rgba(0,0,0,.06); background: var(--off-white); }
+.chat-quick-btn { background: var(--white); border: 1px solid var(--border); color: var(--text-mid); font-size: 11.5px; padding: 5px 12px; cursor: pointer; transition: var(--transition); font-family: 'DM Sans', sans-serif; }
+.chat-quick-btn:hover { border-color: var(--gold); color: var(--gold); }
+.chat-input-row { display: flex; gap: 0; border-top: 1px solid rgba(0,0,0,.08); }
+.chat-input { flex: 1; padding: 13px 16px; border: none; outline: none; font-size: 13px; font-family: 'DM Sans', sans-serif; color: var(--text-dark); background: var(--white); }
+.chat-send { background: var(--gold); color: var(--navy); border: none; padding: 0 18px; font-size: 16px; cursor: pointer; transition: background 0.2s; }
+.chat-send:hover { background: var(--gold-light); }
+.typing-indicator { display: flex; gap: 4px; align-items: center; padding: 12px 14px; background: var(--off-white); width: fit-content; border: 1px solid var(--border-light); }
+.typing-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--steel); animation: typingDot 1.4s ease-in-out infinite; }
+.typing-dot:nth-child(2) { animation-delay: 0.2s; }
+.typing-dot:nth-child(3) { animation-delay: 0.4s; }
+@keyframes typingDot { 0%,80%,100%{transform:scale(1);opacity:.4} 40%{transform:scale(1.3);opacity:1} }
+
+/* ═══════════════════════════════════════════════════════════
+   FOOTER
+═══════════════════════════════════════════════════════════ */
+footer { background: var(--navy); border-top: 3px solid var(--gold); padding: 60px 0 0; }
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 44px; margin-bottom: 44px; }
+.footer-brand {}
+.footer-logo { display: flex; align-items: center; gap: 12px; margin-bottom: 18px; }
+.fl-hex { width: 42px; height: 42px; background: var(--gold); display: flex; align-items: center; justify-content: center; clip-path: polygon(50% 0%,100% 25%,100% 75%,50% 100%,0% 75%,0% 25%); }
+.fl-hex span { font-family: 'Playfair Display', serif; font-weight: 900; font-size: 16px; color: var(--navy); }
+.fl-text .fn { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 18px; color: var(--white); }
+.fl-text .fs { font-size: 8.5px; color: var(--steel); letter-spacing: 1.5px; text-transform: uppercase; }
+.footer-brand p { font-size: 13px; color: var(--steel); line-height: 1.75; margin-bottom: 20px; font-weight: 300; }
+.social-row { display: flex; gap: 9px; }
+.soc-btn { width: 34px; height: 34px; border: 1px solid var(--navy-light); color: var(--steel); display: flex; align-items: center; justify-content: center; text-decoration: none; font-size: 13px; transition: var(--transition); }
+.soc-btn:hover { border-color: var(--gold); color: var(--gold); }
+.footer-col h4 { font-family: 'Playfair Display', serif; font-size: 14px; font-weight: 700; color: var(--white); margin-bottom: 18px; padding-bottom: 9px; border-bottom: 1px solid var(--border); }
+.footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+.footer-col ul li a { font-size: 12.5px; color: var(--steel); text-decoration: none; transition: var(--transition); display: flex; align-items: center; gap: 7px; }
+.footer-col ul li a::before { content: '›'; color: var(--gold); font-size: 14px; }
+.footer-col ul li a:hover { color: var(--gold); }
+.footer-bottom { border-top: 1px solid rgba(201,168,76,.12); padding: 18px 0; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+.footer-bottom p { font-size: 11.5px; color: var(--steel); }
+.footer-links { display: flex; gap: 18px; flex-wrap: wrap; }
+.footer-links a { font-size: 11.5px; color: var(--steel); text-decoration: none; transition: color 0.2s; }
+.footer-links a:hover { color: var(--gold); }
+.bw-identity { display: flex; align-items: center; gap: 8px; font-size: 11px; color: var(--steel); }
+.bw-flag { width: 30px; height: 19px; background: linear-gradient(to bottom,#75aadb 0%,#75aadb 33%,#000 33%,#000 40%,#fff 40%,#fff 60%,#000 60%,#000 67%,#75aadb 67%,#75aadb 100%); border: 1px solid rgba(255,255,255,.08); }
+
+/* ═══════════════════════════════════════════════════════════
+   SCROLL REVEAL
+═══════════════════════════════════════════════════════════ */
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* ═══════════════════════════════════════════════════════════
+   LOADING SPINNER
+═══════════════════════════════════════════════════════════ */
+.spinner { width: 20px; height: 20px; border: 2px solid rgba(10,22,40,.15); border-top-color: var(--navy); border-radius: 50%; animation: spin 0.7s linear infinite; display: inline-block; }
+.spinner.light { border-color: rgba(255,255,255,.2); border-top-color: var(--white); }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ═══════════════════════════════════════════════════════════
+   MOBILE RESPONSIVE
+═══════════════════════════════════════════════════════════ */
+@media (max-width: 1100px) {
+  .container { padding: 0 28px; }
+  .hero .container { grid-template-columns: 1fr; }
+  .hero-right { display: none; }
+  .sector-cards { grid-template-columns: repeat(2,1fr); }
+  .pub-grid { grid-template-columns: repeat(2,1fr); }
+  .sh-cards { grid-template-columns: repeat(3,1fr); }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .qs-grid { grid-template-columns: repeat(3,1fr); }
+}
+@media (max-width: 768px) {
+  .section { padding: 60px 0; }
+  .about-grid, .consumer-grid, .cyber-layout, .domain-layout, .sec-layout, .integration-layout, .news-layout, .service-grid, .cons-grid, .stats-layout { grid-template-columns: 1fr; }
+  .sd-metrics { grid-template-columns: 1fr 1fr; }
+  .pub-grid { grid-template-columns: 1fr; }
+  .sh-cards { grid-template-columns: repeat(2,1fr); }
+  .qs-grid { grid-template-columns: repeat(2,1fr); }
+  .main-nav { display: none; }
+  .hamburger { display: flex; }
+  .navbar .container { gap: 10px; }
+  #nav-search { width: 130px; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .top-bar .container { flex-direction: column; gap: 8px; align-items: flex-start; }
+  .hero-title { font-size: 30px; }
+  .hero-stats { flex-wrap: wrap; gap: 20px; }
+  .metric-cards { grid-template-columns: 1fr 1fr; }
+  .metric-card:nth-child(2n) { margin-top: 0; }
+  .chat-window { width: calc(100vw - 24px); right: 12px; }
+  .security-badges { grid-template-columns: 1fr 1fr; }
+  .form-row { grid-template-columns: 1fr; }
+}
+/* Mobile nav menu */
+.mobile-menu {
+  display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+  background: var(--navy); z-index: 5000; flex-direction: column;
+  padding: 24px; overflow-y: auto;
+}
+.mobile-menu.open { display: flex; }
+.mm-close { align-self: flex-end; background: none; border: none; color: var(--gold); font-size: 28px; cursor: pointer; margin-bottom: 24px; }
+.mm-link { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: var(--white); text-decoration: none; padding: 12px 0; border-bottom: 1px solid rgba(201,168,76,.12); display: block; transition: color 0.2s; }
+.mm-link:hover { color: var(--gold); }
+
+/* ═══════════════════════════════════════
+   MODAL SYSTEM
+═══════════════════════════════════════ */
+.modal-overlay {
+  position: fixed; inset: 0; z-index: 9500;
+  background: rgba(10,22,40,0.85); backdrop-filter: blur(4px);
+  display: flex; align-items: center; justify-content: center;
+  padding: 16px; opacity: 0; pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+.modal-overlay.open { opacity: 1; pointer-events: all; }
+.modal {
+  background: var(--white); width: 100%; max-width: 560px;
+  max-height: 90vh; overflow-y: auto;
+  transform: translateY(24px) scale(0.97);
+  transition: transform 0.25s ease;
+  border-top: 3px solid var(--gold);
+  box-shadow: 0 32px 80px rgba(0,0,0,0.4);
+}
+.modal-overlay.open .modal { transform: translateY(0) scale(1); }
+.modal::-webkit-scrollbar { width: 4px; }
+.modal::-webkit-scrollbar-thumb { background: var(--steel-light); }
+.modal-header {
+  display: flex; justify-content: space-between; align-items: flex-start;
+  padding: 22px 24px 16px; border-bottom: 1px solid var(--border-light);
+  position: sticky; top: 0; background: var(--white); z-index: 1;
+}
+.modal-title { font-family: 'Playfair Display',serif; font-size: 18px; font-weight: 700; color: var(--navy); line-height: 1.3; }
+.modal-close {
+  background: none; border: none; font-size: 22px; color: var(--steel);
+  cursor: pointer; padding: 0 4px; line-height: 1; flex-shrink: 0; margin-left: 12px;
+  transition: color 0.2s;
+}
+.modal-close:hover { color: var(--navy); }
+.modal-body { padding: 20px 24px 24px; }
+.modal-section { margin-bottom: 18px; }
+.modal-label { font-size: 11px; font-weight: 600; color: var(--steel); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+.modal-field {
+  width: 100%; padding: 11px 14px; border: 1px solid var(--steel-light);
+  font-family: 'DM Sans',sans-serif; font-size: 14px; color: var(--text-dark);
+  outline: none; transition: border-color 0.2s; background: var(--white);
+}
+.modal-field:focus { border-color: var(--gold); }
+.modal-select { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%238BA3BF' fill='none' stroke-width='1.5'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; padding-right: 36px; }
+.modal-textarea { resize: vertical; min-height: 90px; }
+.modal-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.modal-row-full { grid-column: 1/-1; }
+.modal-btn-row { display: flex; gap: 10px; margin-top: 20px; flex-wrap: wrap; }
+.modal-submit {
+  flex: 1; padding: 13px; background: var(--gold); color: var(--navy);
+  border: none; font-family: 'DM Sans',sans-serif; font-weight: 700; font-size: 14px;
+  cursor: pointer; transition: background 0.2s;
+  clip-path: polygon(0 0,calc(100% - 8px) 0,100% 8px,100% 100%,8px 100%,0 calc(100% - 8px));
+}
+.modal-submit:hover { background: var(--gold-light); }
+.modal-submit:disabled { background: var(--steel-light); cursor: not-allowed; }
+.modal-cancel { padding: 12px 20px; background: none; border: 1px solid var(--steel-light); color: var(--text-mid); font-family: 'DM Sans',sans-serif; font-size: 14px; cursor: pointer; transition: all 0.2s; }
+.modal-cancel:hover { border-color: var(--navy); color: var(--navy); }
+.modal-success { text-align: center; padding: 20px 0; }
+.modal-success-icon { font-size: 48px; margin-bottom: 12px; }
+.modal-success-title { font-family: 'Playfair Display',serif; font-size: 20px; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+.modal-success-msg { font-size: 14px; color: var(--text-mid); line-height: 1.6; margin-bottom: 6px; }
+.modal-ref { font-family: 'JetBrains Mono',monospace; font-size: 16px; color: var(--gold); background: var(--off-white); border: 1px solid var(--border); padding: 10px 18px; display: inline-block; margin: 10px 0; }
+.modal-info-box { background: var(--off-white); border: 1px solid var(--border); border-left: 4px solid var(--gold); padding: 14px 16px; margin-bottom: 14px; }
+.modal-info-box p { font-size: 13px; color: var(--text-mid); line-height: 1.6; }
+.modal-info-box strong { color: var(--navy); }
+.modal-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.modal-list li { display: flex; align-items: center; gap: 10px; font-size: 13.5px; color: var(--text-mid); padding: 10px 14px; background: var(--off-white); border: 1px solid var(--border); }
+.modal-list li span { font-size: 18px; }
+.dir-table { width: 100%; border-collapse: collapse; }
+.dir-table th { text-align: left; font-size: 11px; font-weight: 600; color: var(--steel); text-transform: uppercase; letter-spacing: 1px; padding: 8px 12px; border-bottom: 2px solid var(--border); }
+.dir-table td { padding: 11px 12px; font-size: 13px; color: var(--text-mid); border-bottom: 1px solid rgba(0,0,0,0.05); }
+.dir-table tr:hover td { background: var(--off-white); }
+.dir-table .status-badge { font-family: 'JetBrains Mono',monospace; font-size: 10px; padding: 2px 8px; }
+.dir-table .active-b { background: rgba(39,174,96,.1); color: var(--green); }
+.step-indicator { display: flex; gap: 6px; margin-bottom: 18px; }
+.step-dot { flex: 1; height: 4px; background: var(--steel-light); transition: background 0.3s; }
+.step-dot.active { background: var(--gold); }
+.step-dot.done { background: var(--green); }
+@media (max-width: 480px) {
+  .modal-row { grid-template-columns: 1fr; }
+  .modal { max-height: 95vh; }
+}
+
+</style>
+</head>
+<body>
+
+<!-- ── SKIP LINK (Accessibility) ───────────────────────── -->
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<!-- ── COOKIE CONSENT ──────────────────────────────────── -->
+<div id="cookie-banner" role="alert" aria-label="Cookie consent">
+  <p class="cb-text">
+    🍪 BOCRA uses cookies to improve your experience and ensure secure access. By continuing, you accept our
+    <a href="#" tabindex="0">Privacy Policy</a> and <a href="#" tabindex="0">Cookie Policy</a>.
+    All data is processed in compliance with the Botswana Data Protection Act 2018.
+  </p>
+  <div class="cb-actions">
+    <button class="btn btn-outline-gold btn-sm" onclick="rejectCookies()">Reject Non-Essential</button>
+    <button class="btn btn-gold btn-sm" onclick="acceptCookies()">Accept All</button>
+  </div>
+</div>
+
+<!-- ── TOAST CONTAINER ─────────────────────────────────── -->
+<div id="toast-container" aria-live="polite" aria-label="Notifications"></div>
+
+<!-- ── TOP BAR ─────────────────────────────────────────── -->
+<div class="top-bar" role="banner">
+  <div class="container">
+    <div class="tb-left">
+      <a href="tel:+26739573755" class="tb-contact" aria-label="Call BOCRA">📞 +267 395 7755</a>
+      <span class="tb-sep" aria-hidden="true">|</span>
+      <a href="mailto:info@bocra.org.bw" class="tb-contact" aria-label="Email BOCRA">✉ info@bocra.org.bw</a>
+      <span class="tb-sep" aria-hidden="true">|</span>
+      <span class="tb-contact">📍 BOCRA House, Gaborone</span>
+    </div>
+    <div class="tb-right">
+      <div class="lang-btns" role="group" aria-label="Language selection">
+        <button class="lang-btn active" onclick="switchLang('en',this)" aria-pressed="true">EN</button>
+        <button class="lang-btn" onclick="switchLang('sw',this)" aria-pressed="false">SW</button>
+      </div>
+      <div class="acc-tools" role="group" aria-label="Accessibility tools">
+        <button class="acc-tool" onclick="changeFontSize(1)" aria-label="Increase font size" title="Increase text size">A+</button>
+        <button class="acc-tool" onclick="changeFontSize(-1)" aria-label="Decrease font size" title="Decrease text size">A−</button>
+        <button class="acc-tool" onclick="toggleContrast()" aria-label="Toggle high contrast" title="High contrast">◑</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── NAVBAR ──────────────────────────────────────────── -->
+<header class="navbar" role="navigation" aria-label="Main navigation">
+  <div class="container">
+    <a href="#" class="logo-link" aria-label="BOCRA Home">
+      <div class="logo-hex" aria-hidden="true"><span>B</span></div>
+      <div class="logo-text-block">
+        <div class="logo-name">BOCRA</div>
+        <div class="logo-sub">Botswana Communications Regulatory Authority</div>
+      </div>
+    </a>
+
+    <nav class="main-nav" aria-label="Primary navigation">
+      <div class="nav-item">
+        <button class="nav-link" aria-haspopup="true" aria-expanded="false" onclick="toggleDropdown(this)">
+          About <span class="nav-arrow" aria-hidden="true">▾</span>
+        </button>
+        <div class="dropdown" role="menu">
+          <a href="#" role="menuitem">Mandate &amp; Functions</a>
+          <a href="#" role="menuitem">Board of Directors</a>
+          <a href="#" role="menuitem">Management Team</a>
+          <a href="#" role="menuitem">Legislation &amp; Policy</a>
+          <a href="#" role="menuitem">Annual Reports</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <button class="nav-link" aria-haspopup="true" aria-expanded="false" onclick="toggleDropdown(this)">
+          Licensing <span class="nav-arrow" aria-hidden="true">▾</span>
+        </button>
+        <div class="dropdown" role="menu">
+          <a href="#" role="menuitem">Telecom Licences</a>
+          <a href="#" role="menuitem">Broadcasting Licences</a>
+          <a href="#" role="menuitem">Postal Services</a>
+          <a href="#" role="menuitem">Type Approval</a>
+          <a href="#" role="menuitem">Apply Online</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <button class="nav-link" aria-haspopup="true" aria-expanded="false" onclick="toggleDropdown(this)">
+          Regulatory <span class="nav-arrow" aria-hidden="true">▾</span>
+        </button>
+        <div class="dropdown" role="menu">
+          <a href="#" role="menuitem">Regulations &amp; Guidelines</a>
+          <a href="#" role="menuitem">Public Consultations</a>
+          <a href="#" role="menuitem">Spectrum Management</a>
+          <a href="#" role="menuitem">Tariff Regulation</a>
+          <a href="#" role="menuitem">Quality of Service</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <button class="nav-link" aria-haspopup="true" aria-expanded="false" onclick="toggleDropdown(this)">
+          Consumers <span class="nav-arrow" aria-hidden="true">▾</span>
+        </button>
+        <div class="dropdown" role="menu">
+          <a href="#" role="menuitem">Consumer Rights</a>
+          <a href="#" role="menuitem">File a Complaint</a>
+          <a href="#" role="menuitem">Track Complaint</a>
+          <a href="#" role="menuitem">Consumer Guides</a>
+          <a href="#" role="menuitem">Data Protection</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <button class="nav-link" aria-haspopup="true" aria-expanded="false" onclick="toggleDropdown(this)">
+          Cybersecurity <span class="nav-arrow" aria-hidden="true">▾</span>
+        </button>
+        <div class="dropdown" role="menu">
+          <a href="#" role="menuitem">BW-CIRT</a>
+          <a href="#" role="menuitem">Security Advisories</a>
+          <a href="#" role="menuitem">Incident Reporting</a>
+          <a href="#" role="menuitem">Guidelines &amp; Standards</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <button class="nav-link" aria-haspopup="true" aria-expanded="false" onclick="toggleDropdown(this)">
+          .BW Registry <span class="nav-arrow" aria-hidden="true">▾</span>
+        </button>
+        <div class="dropdown" role="menu">
+          <a href="#" role="menuitem">Domain Search</a>
+          <a href="#" role="menuitem">Register Domain</a>
+          <a href="#" role="menuitem">WHOIS Lookup</a>
+          <a href="#" role="menuitem">Registrar List</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="nav-actions">
+      <div class="search-wrap" role="search">
+        <div class="search-input-row">
+          <label for="nav-search" class="sr-only">Search BOCRA</label>
+          <input type="search" id="nav-search" placeholder="Search BOCRA..." autocomplete="off" aria-autocomplete="list" aria-controls="search-results" oninput="handleSearch(this.value)" onkeydown="if(event.key==='Enter')doSearch()">
+          <button class="search-btn" onclick="doSearch()" aria-label="Submit search">🔍</button>
+        </div>
+        <div id="search-results" class="search-results" role="listbox" aria-label="Search suggestions"></div>
+      </div>
+      <button class="hamburger" id="hamburger" onclick="openMobileMenu()" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb-bar" aria-label="Breadcrumb">
+  <div class="container">
+    <ol class="breadcrumb">
+      <li><a href="#">🏠 Home</a></li>
+      <span class="breadcrumb-sep" aria-hidden="true">›</span>
+      <li aria-current="page">Welcome to BOCRA</li>
+    </ol>
+  </div>
+</div>
+
+<!-- ALERT TICKER -->
+<div class="alert-bar" role="marquee" aria-label="Regulatory notices">
+  <span class="alert-label" aria-hidden="true">⚡ NOTICES</span>
+  <div class="ticker-wrap" aria-hidden="true">
+    <div class="ticker">
+      <span class="ticker-item"><span class="ticker-dot"></span> Public consultation on Mobile Number Portability Regulations closes 31 March 2025 — Submit feedback now</span>
+      <span class="ticker-item"><span class="ticker-dot"></span> BW-CIRT Advisory: Critical vulnerability in enterprise VPN solutions — CVE-2025-0412 — Patch immediately</span>
+      <span class="ticker-item"><span class="ticker-dot"></span> BOCRA issues new QoS benchmarks for mobile broadband effective Q2 2025</span>
+      <span class="ticker-item"><span class="ticker-dot"></span> Annual Spectrum Audit results published — Download the full report</span>
+      <span class="ticker-item"><span class="ticker-dot"></span> New .BW registry portal launched with DNSSEC support — Register your domain today</span>
+      <span class="ticker-item"><span class="ticker-dot"></span> Public consultation on Mobile Number Portability Regulations closes 31 March 2025 — Submit feedback now</span>
+      <span class="ticker-item"><span class="ticker-dot"></span> BW-CIRT Advisory: Critical vulnerability in enterprise VPN solutions — CVE-2025-0412 — Patch immediately</span>
+      <span class="ticker-item"><span class="ticker-dot"></span> BOCRA issues new QoS benchmarks for mobile broadband effective Q2 2025</span>
+      <span class="ticker-item"><span class="ticker-dot"></span> Annual Spectrum Audit results published — Download the full report</span>
+      <span class="ticker-item"><span class="ticker-dot"></span> New .BW registry portal launched with DNSSEC support — Register your domain today</span>
+    </div>
+  </div>
+</div>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobile-menu" role="dialog" aria-label="Mobile navigation" aria-modal="true">
+  <button class="mm-close" onclick="closeMobileMenu()" aria-label="Close menu">✕</button>
+  <a href="#" class="mm-link">About BOCRA</a>
+  <a href="#" class="mm-link">Licensing</a>
+  <a href="#" class="mm-link">Regulatory</a>
+  <a href="#" class="mm-link">Consumers</a>
+  <a href="#" class="mm-link">Cybersecurity</a>
+  <a href="#" class="mm-link">.BW Registry</a>
+  <a href="#" class="mm-link">News</a>
+  <a href="#" class="mm-link">Contact</a>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+  MAIN CONTENT
+═══════════════════════════════════════════════════════════ -->
+<main id="main-content">
+
+<!-- HERO -->
+<section class="hero" aria-label="Welcome to BOCRA">
+  <div class="hero-bg" aria-hidden="true">
+    <svg viewBox="0 0 1200 700" preserveAspectRatio="xMidYMid slice">
+      <defs>
+        <pattern id="hex-pat" width="60" height="52" patternUnits="userSpaceOnUse">
+          <polygon points="30,2 58,17 58,47 30,62 2,47 2,17" fill="none" stroke="rgba(201,168,76,0.35)" stroke-width="0.5"/>
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#hex-pat)"/>
+    </svg>
+    <div class="hero-line" style="left:18%;animation-delay:0s"></div>
+    <div class="hero-line" style="left:50%;animation-delay:1.3s"></div>
+    <div class="hero-line" style="left:82%;animation-delay:2.6s"></div>
+    <div class="hero-orb" style="width:600px;height:600px;background:var(--gold);top:-200px;right:-100px;animation-delay:0s"></div>
+    <div class="hero-orb" style="width:400px;height:400px;background:var(--navy-light);bottom:-150px;left:80px;animation-delay:3.5s"></div>
+  </div>
+  <div class="container">
+    <div class="hero-left">
+      <div class="hero-eyebrow">
+        <div class="eyebrow-line" aria-hidden="true"></div>
+        <div class="eyebrow-text">Established 2012 · Republic of Botswana</div>
+      </div>
+      <h1 class="hero-title">
+        Regulating Botswana's<br>
+        <em>Digital Future</em><br>
+        in the Public Interest
+      </h1>
+      <p class="hero-subtitle">
+        BOCRA oversees telecommunications, broadcasting, postal services, internet governance, and cybersecurity — enabling a connected, innovative, and protected digital economy for all Batswana.
+      </p>
+      <div class="hero-ctas">
+        <button class="btn btn-gold" onclick="openModal('licence')">Apply for a Licence ›</button>
+        <button class="btn btn-ghost" onclick="document.getElementById('complaint-section').scrollIntoView({behavior:'smooth'})">File a Complaint ›</button>
+      </div>
+      <div class="hero-stats">
+        <div>
+          <div class="hs-num"><span class="counter" data-target="147" id="stat-licences">0</span>+</div>
+          <div class="hs-label">Active Licensees</div>
+        </div>
+        <div>
+          <div class="hs-num"><span class="counter" data-target="98">0</span>%</div>
+          <div class="hs-label">Complaint Resolution Rate</div>
+        </div>
+        <div>
+          <div class="hs-num"><span class="counter" data-target="2417">0</span></div>
+          <div class="hs-label">.BW Domains</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-right" aria-hidden="true">
+      <div class="dash-card">
+        <div class="dc-header">
+          <span class="dc-title">⚙ Regulatory Dashboard</span>
+          <span class="live-badge"><span class="live-dot"></span>LIVE</span>
+        </div>
+        <div class="dc-metrics">
+          <div class="dc-metric"><div class="dcm-val up" id="dc-licences">147</div><div class="dcm-label">Active Licences</div></div>
+          <div class="dc-metric"><div class="dcm-val warn" id="dc-pending">23</div><div class="dcm-label">Pending Apps</div></div>
+          <div class="dc-metric"><div class="dcm-val" id="dc-complaints">12</div><div class="dcm-label">Open Complaints</div></div>
+          <div class="dc-metric"><div class="dcm-val up" id="dc-consultations">4</div><div class="dcm-label">Active Consults</div></div>
+        </div>
+        <div class="dc-barchart">
+          <div class="dc-chart-label">Licence Applications (6 Months)</div>
+          <div class="bars">
+            <div class="bar" style="height:40%"></div>
+            <div class="bar" style="height:65%"></div>
+            <div class="bar" style="height:52%"></div>
+            <div class="bar" style="height:80%"></div>
+            <div class="bar" style="height:72%"></div>
+            <div class="bar" style="height:91%"></div>
+          </div>
+        </div>
+        <div class="dc-list">
+          <div class="dc-list-row">MNP Consultation Open <span class="dc-badge new-b">NEW</span></div>
+          <div class="dc-list-row">BW-CIRT Advisory 2025-04 <span class="dc-badge warn-b">CRITICAL</span></div>
+          <div class="dc-list-row">Licence TL-2025-089 <span class="dc-badge info-b">PENDING</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUICK SERVICES -->
+<div class="quick-services" role="navigation" aria-label="Quick services">
+  <div class="qs-grid">
+    <button class="qs-item" onclick="openModal('licence')" aria-label="Apply for a Licence">
+      <div class="qs-icon" aria-hidden="true">📋</div>
+      <span class="qs-label">Apply for Licence</span>
+    </button>
+    <button class="qs-item" onclick="document.getElementById('complaint-section').scrollIntoView({behavior:'smooth'})" aria-label="File a Complaint">
+      <div class="qs-icon" aria-hidden="true">📣</div>
+      <span class="qs-label">File a Complaint</span>
+    </button>
+    <button class="qs-item" onclick="scrollToSection('domain-section')" aria-label="Register .BW Domain">
+      <div class="qs-icon" aria-hidden="true">🌐</div>
+      <span class="qs-label">Register .BW Domain</span>
+    </button>
+    <button class="qs-item" onclick="scrollToSection('cyber-section')" aria-label="Cybersecurity Advisory">
+      <div class="qs-icon" aria-hidden="true">🔒</div>
+      <span class="qs-label">Cyber Advisory</span>
+    </button>
+    <button class="qs-item" onclick="scrollToSection('consultations-section')" aria-label="View Public Consultations">
+      <div class="qs-icon" aria-hidden="true">📄</div>
+      <span class="qs-label">Consultations</span>
+    </button>
+    <button class="qs-item" onclick="scrollToSection('publications-section')" aria-label="View Regulatory Reports">
+      <div class="qs-icon" aria-hidden="true">📊</div>
+      <span class="qs-label">Regulatory Reports</span>
+    </button>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="section about-section" aria-labelledby="about-title">
+  <div class="about-watermark" aria-hidden="true">BOCRA</div>
+  <div class="container">
+    <div class="about-grid">
+      <div>
+        <span class="tag">Our Mandate</span>
+        <h2 class="section-title" id="about-title">Regulation Serving<br><span>All Batswana</span></h2>
+        <p class="section-lead">
+          The Botswana Communications Regulatory Authority was established under the BOCRA Act to regulate electronic communications, postal services, radio spectrum, and internet services — fostering competition, innovation, consumer protection, and national security.
+        </p>
+        <ul class="mandate-list" role="list">
+          <li><span class="mandate-check" aria-hidden="true">✓</span> Issue and manage communications licences and spectrum assignments</li>
+          <li><span class="mandate-check" aria-hidden="true">✓</span> Protect consumer rights and enforce quality-of-service standards</li>
+          <li><span class="mandate-check" aria-hidden="true">✓</span> Administer the .BW country-code top-level domain registry</li>
+          <li><span class="mandate-check" aria-hidden="true">✓</span> Lead national cybersecurity coordination through BW-CIRT</li>
+          <li><span class="mandate-check" aria-hidden="true">✓</span> Implement data protection and privacy regulations</li>
+          <li><span class="mandate-check" aria-hidden="true">✓</span> Drive digital transformation and internet access across Botswana</li>
+        </ul>
+      </div>
+      <div class="metric-cards" role="list" aria-label="Key statistics">
+        <div class="metric-card reveal" role="listitem"><div class="mc-num">12+</div><div class="mc-label">Years of Regulatory Excellence</div></div>
+        <div class="metric-card reveal" role="listitem"><div class="mc-num">5</div><div class="mc-label">Regulated Sectors</div></div>
+        <div class="metric-card reveal" role="listitem"><div class="mc-num">98%</div><div class="mc-label">Complaint Resolution Rate</div></div>
+        <div class="metric-card reveal" role="listitem"><div class="mc-num">147</div><div class="mc-label">Active Licensees</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTORS -->
+<section class="section sectors-section" aria-labelledby="sectors-title">
+  <div class="sectors-grid-bg" aria-hidden="true"></div>
+  <div class="container" style="position:relative">
+    <div style="text-align:center;margin-bottom:48px">
+      <span class="tag">What We Regulate</span>
+      <h2 class="section-title light" id="sectors-title">Five <span>Regulatory</span> Sectors</h2>
+      <p class="section-lead" style="color:var(--steel);max-width:600px;margin:12px auto 0">Comprehensive oversight across Botswana's entire communications and digital services landscape.</p>
+    </div>
+    <div class="sector-cards" role="list">
+      <div class="sector-card reveal" role="listitem" tabindex="0" aria-label="Telecommunications sector">
+        <span class="sector-icon" aria-hidden="true">📡</span>
+        <div class="sector-name">Telecommunications</div>
+        <p class="sector-desc">Oversight of mobile, fixed-line, and internet service providers including spectrum management, interconnection, and infrastructure sharing frameworks.</p>
+        <a href="#" class="sector-link" aria-label="Explore Telecommunications regulation">Explore ⟶</a>
+      </div>
+      <div class="sector-card reveal" role="listitem" tabindex="0" aria-label="Broadcasting sector">
+        <span class="sector-icon" aria-hidden="true">📺</span>
+        <div class="sector-name">Broadcasting</div>
+        <p class="sector-desc">Licensing and content standards for television and radio broadcasters promoting diverse, local, and educational programming across Botswana.</p>
+        <a href="#" class="sector-link" aria-label="Explore Broadcasting regulation">Explore ⟶</a>
+      </div>
+      <div class="sector-card reveal" role="listitem" tabindex="0" aria-label="Postal Services sector">
+        <span class="sector-icon" aria-hidden="true">📮</span>
+        <div class="sector-name">Postal Services</div>
+        <p class="sector-desc">Regulation of national and international postal operators, courier services, and universal service obligations to all citizens.</p>
+        <a href="#" class="sector-link" aria-label="Explore Postal Services regulation">Explore ⟶</a>
+      </div>
+      <div class="sector-card reveal" role="listitem" tabindex="0" aria-label="Internet and Data sector">
+        <span class="sector-icon" aria-hidden="true">🌐</span>
+        <div class="sector-name">Internet &amp; Data</div>
+        <p class="sector-desc">Governance of internet services, data protection, electronic transactions, and the .BW country-code top-level domain registry administration.</p>
+        <a href="#" class="sector-link" aria-label="Explore Internet and Data regulation">Explore ⟶</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES PORTAL -->
+<section class="section services-section" aria-labelledby="services-title">
+  <div class="container">
+    <div class="sp-header">
+      <div>
+        <span class="tag">Online Services</span>
+        <h2 class="section-title" id="services-title">Self-Service <span>Portal</span></h2>
+      </div>
+      <div class="sp-tabs" role="tablist" aria-label="Service categories">
+        <button class="sp-tab active" role="tab" aria-selected="true" onclick="switchTab(this)">All Services</button>
+        <button class="sp-tab" role="tab" aria-selected="false" onclick="switchTab(this)">Licensing</button>
+        <button class="sp-tab" role="tab" aria-selected="false" onclick="switchTab(this)">Complaints</button>
+        <button class="sp-tab" role="tab" aria-selected="false" onclick="switchTab(this)">Registry</button>
+      </div>
+    </div>
+    <div class="service-grid" role="list">
+      <div class="service-card reveal" role="listitem" tabindex="0">
+        <div class="sc-cat">📋 Licensing</div>
+        <div class="sc-title">Telecom Licence Application</div>
+        <p class="sc-desc">Apply online for individual or class telecommunications licences. Track your application status in real time with automated notifications at each stage.</p>
+        <button class="sc-action" onclick="openModal('licence')" aria-label="Start Telecom Licence Application">Start Application ⟶</button>
+        <div class="sc-meta"><span class="sc-meta-item">⏱ 5–10 business days</span><span class="sc-meta-item">📁 Online</span></div>
+      </div>
+      <div class="service-card reveal" role="listitem" tabindex="0">
+        <div class="sc-cat">📺 Licensing</div>
+        <div class="sc-title">Broadcasting Licence Application</div>
+        <p class="sc-desc">Submit applications for community, commercial, or subscription broadcasting services with automated document verification and progress tracking.</p>
+        <button class="sc-action" onclick="openModal('broadcasting')" aria-label="Start Broadcasting Licence Application">Start Application ⟶</button>
+        <div class="sc-meta"><span class="sc-meta-item">⏱ 15–20 business days</span><span class="sc-meta-item">📁 Online</span></div>
+      </div>
+      <div class="service-card reveal" role="listitem" tabindex="0">
+        <div class="sc-cat">📣 Consumer Protection</div>
+        <div class="sc-title">Lodge a Complaint</div>
+        <p class="sc-desc">File complaints against service providers regarding billing disputes, service quality, or consumer rights violations. Receive a tracking number instantly.</p>
+        <button class="sc-action" onclick="document.getElementById('complaint-section').scrollIntoView({behavior:'smooth'})" aria-label="File a Consumer Complaint">File Complaint ⟶</button>
+        <div class="sc-meta"><span class="sc-meta-item">⏱ 48–72 hours</span><span class="sc-meta-item">📁 Online / SMS</span></div>
+      </div>
+      <div class="service-card reveal" role="listitem" tabindex="0">
+        <div class="sc-cat">🌐 Domain Registry</div>
+        <div class="sc-title">Register .BW Domain</div>
+        <p class="sc-desc">Search for available .bw domain names and register your Botswana web presence through accredited local and international registrars.</p>
+        <button class="sc-action" onclick="scrollToSection('domain-section')" aria-label="Search and Register a .BW Domain">Search Domains ⟶</button>
+        <div class="sc-meta"><span class="sc-meta-item">⏱ Same day</span><span class="sc-meta-item">📁 Online</span></div>
+      </div>
+      <div class="service-card reveal" role="listitem" tabindex="0">
+        <div class="sc-cat">📻 Type Approval</div>
+        <div class="sc-title">Equipment Type Approval</div>
+        <p class="sc-desc">Submit telecommunications equipment for type approval certification before market import or deployment in Botswana's communications networks.</p>
+        <button class="sc-action" onclick="openModal('typeapproval')" aria-label="Apply for Equipment Type Approval">Apply Now ⟶</button>
+        <div class="sc-meta"><span class="sc-meta-item">⏱ 10–15 business days</span><span class="sc-meta-item">📁 Online</span></div>
+      </div>
+      <div class="service-card reveal" role="listitem" tabindex="0">
+        <div class="sc-cat">🔒 Cybersecurity</div>
+        <div class="sc-title">Report a Cyber Incident</div>
+        <p class="sc-desc">Report cybersecurity incidents including data breaches, ransomware attacks, and phishing campaigns to BW-CIRT's 24/7 encrypted reporting portal.</p>
+        <button class="sc-action" onclick="openModal('incident')" aria-label="Report a Cybersecurity Incident">Report Incident ⟶</button>
+        <div class="sc-meta"><span class="sc-meta-item">⏱ 24/7 Response</span><span class="sc-meta-item">🔐 Encrypted</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEWS -->
+<section class="section news-section" aria-labelledby="news-title">
+  <div class="container">
+    <div class="news-header">
+      <div>
+        <span class="tag">Media Centre</span>
+        <h2 class="section-title" id="news-title">Latest News &amp; <span>Updates</span></h2>
+      </div>
+      <button class="btn btn-outline-navy" onclick="openModal('newsarchive')" aria-label="View all news articles">View All News ›</button>
+    </div>
+    <div class="news-layout">
+      <article class="news-featured" tabindex="0" aria-label="Featured news article">
+        <div class="nf-img">
+          <div class="nf-img-bg"></div>
+          <div class="nf-pattern" aria-hidden="true"></div>
+          <div class="nf-ghost" aria-hidden="true">MNP</div>
+          <span class="nf-badge">📰 Press Release</span>
+        </div>
+        <div class="nf-body">
+          <div class="news-date" id="featured-news-date">14 March 2025</div>
+          <h3 class="news-title" id="featured-news-title">BOCRA Opens Public Consultation on Mobile Number Portability Regulations 2025</h3>
+          <p class="news-excerpt" id="featured-news-excerpt">The Botswana Communications Regulatory Authority invites all stakeholders to submit written comments on the proposed Mobile Number Portability Regulations. The consultation period closes 31 March 2025.</p>
+        </div>
+      </article>
+      <div class="news-list" id="news-list-dynamic" role="list" aria-label="Recent news">
+        <article class="nl-item reveal" role="listitem" tabindex="0">
+          <span class="nl-num" aria-hidden="true">01</span>
+          <div><div class="nl-tag">Cybersecurity</div><div class="nl-title">BW-CIRT issues critical advisory on enterprise VPN vulnerabilities affecting Botswana organisations</div><div class="nl-date">12 March 2025</div></div>
+        </article>
+        <article class="nl-item reveal" role="listitem" tabindex="0">
+          <span class="nl-num" aria-hidden="true">02</span>
+          <div><div class="nl-tag">Spectrum</div><div class="nl-title">BOCRA announces 5G spectrum allocation framework for commercial deployment by Q3 2025</div><div class="nl-date">08 March 2025</div></div>
+        </article>
+        <article class="nl-item reveal" role="listitem" tabindex="0">
+          <span class="nl-num" aria-hidden="true">03</span>
+          <div><div class="nl-tag">Consumer</div><div class="nl-title">New mobile broadband Quality of Service benchmarks — operators must comply by June 2025</div><div class="nl-date">03 March 2025</div></div>
+        </article>
+        <article class="nl-item reveal" role="listitem" tabindex="0">
+          <span class="nl-num" aria-hidden="true">04</span>
+          <div><div class="nl-tag">Registry</div><div class="nl-title">Launch of upgraded .BW domain registry portal with DNSSEC and enhanced WHOIS services</div><div class="nl-date">28 Feb 2025</div></div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONSUMER / COMPLAINTS -->
+<section class="section consumer-section" id="complaint-section" aria-labelledby="consumer-title">
+  <div class="container">
+    <div class="consumer-grid">
+      <div>
+        <span class="tag">Consumer Protection</span>
+        <h2 class="section-title light" id="consumer-title">Your Rights.<br><span>Our Priority.</span></h2>
+        <p class="section-lead" style="color:var(--steel)">BOCRA enforces consumer rights across all regulated sectors. Our complaints management system resolves disputes between consumers and service providers efficiently and transparently.</p>
+
+        <!-- Complaint Form -->
+        <div class="complaint-form" role="form" aria-label="Quick Complaint Form">
+          <div class="cf-title">⚡ Quick Complaint Form</div>
+          <div class="progress-steps" role="progressbar" aria-label="Form completion" aria-valuenow="1" aria-valuemin="1" aria-valuemax="3">
+            <div class="ps-step active" id="step1-indicator">1. Details</div>
+            <div class="ps-step" id="step2-indicator">2. Complaint</div>
+            <div class="ps-step" id="step3-indicator">3. Submit</div>
+          </div>
+          <div id="form-step1">
+            <div class="form-row">
+              <div class="form-group" id="fg-name">
+                <label for="cf-name">Full Name *</label>
+                <input type="text" id="cf-name" placeholder="Your full name" required aria-required="true" oninput="validateField(this,'name')">
+                <div class="form-err" id="err-name">Please enter your full name.</div>
+              </div>
+              <div class="form-group" id="fg-email">
+                <label for="cf-email">Email / Phone *</label>
+                <input type="text" id="cf-email" placeholder="Contact details" required aria-required="true" oninput="validateField(this,'contact')">
+                <div class="form-err" id="err-email">Please enter a valid email or phone number.</div>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="cf-provider">Service Provider *</label>
+                <select id="cf-provider" required aria-required="true">
+                  <option value="">Select provider…</option>
+                  <option>Mascom Wireless</option>
+                  <option>Orange Botswana</option>
+                  <option>BTC</option>
+                  <option>Botswana Fibre</option>
+                  <option>Liquid Intelligent Technologies</option>
+                  <option>Other</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="cf-category">Category *</label>
+                <select id="cf-category" required aria-required="true">
+                  <option value="">Select category…</option>
+                  <option>Billing Dispute</option>
+                  <option>Poor Service Quality</option>
+                  <option>Unauthorised Charges</option>
+                  <option>Data Protection</option>
+                  <option>Contract Dispute</option>
+                  <option>Other</option>
+                </select>
+              </div>
+            </div>
+            <button class="btn btn-gold btn-full" style="margin-top:4px" onclick="nextStep()" aria-label="Continue to complaint details">Continue →</button>
+          </div>
+          <div id="form-step2" style="display:none">
+            <div class="form-row">
+              <div class="form-group form-full">
+                <label for="cf-complaint">Describe Your Complaint *</label>
+                <textarea id="cf-complaint" placeholder="Please provide full details of your complaint including dates, amounts, and any previous communications with the provider…" rows="5" required aria-required="true"></textarea>
+              </div>
+            </div>
+            <div class="form-row" style="margin-top:4px">
+              <button class="btn btn-ghost btn-sm" onclick="prevStep()">← Back</button>
+              <button class="btn btn-gold" onclick="submitComplaint()" aria-label="Submit your complaint">Submit Complaint →</button>
+            </div>
+          </div>
+          <div id="form-step3" style="display:none">
+            <div style="text-align:center;padding:20px 0">
+              <div style="font-size:40px;margin-bottom:12px">✅</div>
+              <div style="font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:var(--white);margin-bottom:8px">Complaint Submitted Successfully</div>
+              <div style="font-size:13px;color:var(--steel);margin-bottom:16px">Your reference number is:</div>
+              <div id="complaint-ref" style="font-family:'JetBrains Mono',monospace;font-size:18px;color:var(--gold);background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.3);padding:12px 20px;display:inline-block"></div>
+              <div style="font-size:12px;color:var(--steel);margin-top:12px">A confirmation has been sent to your contact details. Expected resolution: 48–72 hours.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Complaint Tracker -->
+        <div class="tracker-section" aria-label="Complaint tracker">
+          <div class="tracker-title">🔎 Track Your Complaint</div>
+          <div class="tracker-input-row" role="search">
+            <label for="track-input" class="sr-only">Enter complaint reference number</label>
+            <input type="text" id="track-input" placeholder="Enter complaint reference e.g. BOCRA-2025-1247" aria-label="Complaint reference number">
+            <button onclick="trackComplaint()" aria-label="Track complaint">Track →</button>
+          </div>
+          <div class="tracker-result" id="tracker-result" role="status" aria-live="polite">
+            <div class="tr-status">
+              <div class="trs-dot"></div>
+              <div>
+                <div class="trs-text" id="tracker-status-text"></div>
+                <div class="trs-detail" id="tracker-detail-text"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Consumer Tool Cards -->
+      <div>
+        <div class="consumer-tools" role="list" aria-label="Consumer support options">
+          <div class="ct-card reveal" role="listitem" tabindex="0"><span class="ct-icon" aria-hidden="true">📞</span><div class="ct-title">Call Centre</div><p class="ct-desc">Speak directly to a BOCRA consumer advisor — Mon–Fri, 7:30 AM to 4:30 PM</p></div>
+          <div class="ct-card reveal" role="listitem" tabindex="0"><span class="ct-icon" aria-hidden="true">💬</span><div class="ct-title">Live Chat (AI-Powered)</div><p class="ct-desc">Chat with our AI assistant or a live agent for immediate support and guidance</p></div>
+          <div class="ct-card reveal" role="listitem" tabindex="0"><span class="ct-icon" aria-hidden="true">📱</span><div class="ct-title">SMS Complaints</div><p class="ct-desc">Send your complaint via SMS to 17680 — available 24/7 with automated tracking</p></div>
+          <div class="ct-card reveal" role="listitem" tabindex="0"><span class="ct-icon" aria-hidden="true">📊</span><div class="ct-title">Consumer Reports</div><p class="ct-desc">View quarterly complaints statistics and service provider compliance ratings</p></div>
+          <div class="ct-card reveal" role="listitem" tabindex="0"><span class="ct-icon" aria-hidden="true">⚖️</span><div class="ct-title">Know Your Rights</div><p class="ct-desc">Access plain-language guides on your rights as a consumer of communications services</p></div>
+          <div class="ct-card reveal" role="listitem" tabindex="0"><span class="ct-icon" aria-hidden="true">🗂</span><div class="ct-title">Track a Complaint</div><p class="ct-desc">Enter your complaint reference number to view real-time status and resolution notes</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CYBERSECURITY -->
+<section class="section cyber-section" aria-labelledby="cyber-title">
+  <div class="container">
+    <div class="cyber-layout">
+      <div>
+        <span class="tag">BW-CIRT</span>
+        <h2 class="section-title" id="cyber-title" style="margin-bottom:8px">Cybersecurity <span>Advisories</span></h2>
+        <p class="section-lead" style="margin-bottom:24px">Active threat intelligence and security notices for Botswana organisations.</p>
+        <div class="cyber-alerts" role="list" aria-label="Security advisories">
+          <article class="cyber-alert critical reveal" role="listitem" tabindex="0" aria-label="Critical security advisory">
+            <span class="ca-sev critical">CRITICAL</span>
+            <div><div class="ca-title">Enterprise VPN Zero-Day — CVE-2025-0412</div><div class="ca-desc">A critical remote code execution vulnerability in widely used enterprise VPN solutions. Immediate patching required for all affected organisations.</div><div class="ca-date">BW-CIRT-2025-04 · 12 March 2025</div></div>
+          </article>
+          <article class="cyber-alert moderate reveal" role="listitem" tabindex="0">
+            <span class="ca-sev moderate">MODERATE</span>
+            <div><div class="ca-title">Phishing Campaign Targeting Botswana Financial Institutions</div><div class="ca-desc">BW-CIRT is tracking an active phishing campaign impersonating major Botswana banks. Verify all email communications.</div><div class="ca-date">BW-CIRT-2025-03 · 05 March 2025</div></div>
+          </article>
+          <article class="cyber-alert info-a reveal" role="listitem" tabindex="0">
+            <span class="ca-sev info-a">INFO</span>
+            <div><div class="ca-title">National Cybersecurity Awareness Month — April 2025</div><div class="ca-desc">BOCRA and BW-CIRT host workshops, webinars, and public campaigns throughout April to promote cybersecurity awareness.</div><div class="ca-date">BW-CIRT-2025-02 · 01 March 2025</div></div>
+          </article>
+          <article class="cyber-alert reveal" role="listitem" tabindex="0">
+            <span class="ca-sev low">LOW</span>
+            <div><div class="ca-title">Data Protection Act Compliance Deadline — June 2025</div><div class="ca-desc">All data controllers and processors must complete registration with the Information and Data Protection Commissioner by 30 June 2025.</div><div class="ca-date">BW-CIRT-2025-01 · 20 Feb 2025</div></div>
+          </article>
+        </div>
+      </div>
+      <div>
+        <span class="tag">Security Tools</span>
+        <h2 class="section-title" style="margin-bottom:24px">Protect Your <span>Organisation</span></h2>
+        <div class="cyber-tools" role="list">
+          <div class="ct-tool reveal" role="listitem" tabindex="0" onclick="openModal('scanner')">
+            <div class="ct-tool-header"><div class="ct-tool-title">🔍 Vulnerability Scanner</div><span class="ct-tool-badge">FREE</span></div>
+            <p class="ct-tool-desc">Run a basic vulnerability scan on your public-facing web services to identify common security misconfigurations and known CVEs.</p>
+          </div>
+          <div class="ct-tool reveal" role="listitem" tabindex="0" onclick="openModal('incident')">
+            <div class="ct-tool-header"><div class="ct-tool-title">🚨 Incident Reporting Portal</div><span class="ct-tool-badge">SECURE</span></div>
+            <p class="ct-tool-desc">Report cybersecurity incidents to BW-CIRT through an encrypted portal with 24/7 analyst triage and 2-hour response SLA.</p>
+          </div>
+          <div class="ct-tool reveal" role="listitem" tabindex="0" onclick="openModal('assessment')">
+            <div class="ct-tool-header"><div class="ct-tool-title">🛡 Security Assessment</div><span class="ct-tool-badge">GUIDED</span></div>
+            <p class="ct-tool-desc">Request a baseline cybersecurity assessment for critical national infrastructure operators and regulated service providers.</p>
+          </div>
+          <div class="ct-tool reveal" role="listitem" tabindex="0" onclick="openModal('training')">
+            <div class="ct-tool-header"><div class="ct-tool-title">📚 Security Awareness Training</div><span class="ct-tool-badge">ONLINE</span></div>
+            <p class="ct-tool-desc">Access BOCRA's free e-learning modules on phishing prevention, password security, mobile safety, and social engineering.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PUBLICATIONS -->
+<section class="section publications-section" aria-labelledby="publications-title">
+  <div class="container">
+    <div class="pub-header">
+      <div>
+        <span class="tag">Knowledge Centre</span>
+        <h2 class="section-title" id="publications-title">Publications &amp; <span>Reports</span></h2>
+      </div>
+      <button class="btn btn-outline-navy" onclick="openModal('pubarchive')">All Publications ›</button>
+    </div>
+    <div class="pub-grid" role="list">
+      <div class="pub-card reveal" role="listitem" tabindex="0">
+        <div class="pub-cover"><div class="pub-ghost">24</div><span class="pub-cover-icon" aria-hidden="true">📊</span><span class="pub-type-badge">Annual Report</span></div>
+        <div class="pub-body"><div class="pub-title">BOCRA Annual Report 2024</div><div class="pub-meta">February 2025 · PDF · 4.2 MB</div><a href="#" class="pub-dl" onclick="openModal('pub','Annual Report 2024','4.2 MB','annual-report-2024.pdf')">⬇ Download PDF ⟶</a></div>
+      </div>
+      <div class="pub-card reveal" role="listitem" tabindex="0">
+        <div class="pub-cover" style="background:var(--navy-light)"><div class="pub-ghost">Q4</div><span class="pub-cover-icon" aria-hidden="true">📡</span><span class="pub-type-badge">Market Report</span></div>
+        <div class="pub-body"><div class="pub-title">Telecom Market Statistics Q4 2024</div><div class="pub-meta">January 2025 · PDF · 2.8 MB</div><a href="#" class="pub-dl" onclick="openModal('pub','Telecom Market Statistics Q4 2024','2.8 MB','market-stats-q4-2024.pdf')">⬇ Download PDF ⟶</a></div>
+      </div>
+      <div class="pub-card reveal" role="listitem" tabindex="0">
+        <div class="pub-cover" style="background:var(--navy-mid)"><div class="pub-ghost">QoS</div><span class="pub-cover-icon" aria-hidden="true">📶</span><span class="pub-type-badge">QoS Report</span></div>
+        <div class="pub-body"><div class="pub-title">Mobile Broadband QoS Benchmarking 2024</div><div class="pub-meta">March 2025 · PDF · 1.9 MB</div><a href="#" class="pub-dl" onclick="openModal('pub','Mobile Broadband QoS Benchmarking 2024','1.9 MB','qos-report-2024.pdf')">⬇ Download PDF ⟶</a></div>
+      </div>
+      <div class="pub-card reveal" role="listitem" tabindex="0">
+        <div class="pub-cover" style="background:linear-gradient(135deg,#0A1628,#1C3460)"><div class="pub-ghost">CS</div><span class="pub-cover-icon" aria-hidden="true">🔒</span><span class="pub-type-badge">Cyber Report</span></div>
+        <div class="pub-body"><div class="pub-title">Botswana Cybersecurity Threat Landscape 2024</div><div class="pub-meta">December 2024 · PDF · 3.5 MB</div><a href="#" class="pub-dl" onclick="openModal('pub','Cybersecurity Threat Landscape 2024','3.5 MB','cyber-report-2024.pdf')">⬇ Download PDF ⟶</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONSULTATIONS -->
+<section class="section consultations-section" aria-labelledby="consult-title">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:44px">
+      <span class="tag">Stakeholder Engagement</span>
+      <h2 class="section-title light" id="consult-title">Public <span>Consultations</span></h2>
+      <p class="section-lead" style="color:var(--steel);max-width:600px;margin:12px auto 0">Participate in shaping Botswana's regulatory framework. Your input matters.</p>
+    </div>
+    <div class="cons-grid" id="cons-grid-dynamic" role="list">
+      <div class="cons-card reveal" role="listitem" tabindex="0">
+        <div class="cons-status-row"><div class="cons-dot open" aria-hidden="true"></div><span class="cons-status-txt open">Open for Comment</span></div>
+        <div class="cons-title">Mobile Number Portability Regulations 2025</div>
+        <p class="cons-desc">Proposed regulations to establish a comprehensive mobile number portability framework enabling subscribers to retain their numbers when switching operators.</p>
+        <div class="cons-footer"><span class="cons-deadline">⏰ Closes: 31 March 2025</span><button class="cons-cta" onclick="openModal('consult','CONS-2025-001','Mobile Number Portability Regulations 2025')">Submit Comment ⟶</button></div>
+      </div>
+      <div class="cons-card reveal" role="listitem" tabindex="0">
+        <div class="cons-status-row"><div class="cons-dot open" aria-hidden="true"></div><span class="cons-status-txt open">Open for Comment</span></div>
+        <div class="cons-title">5G Spectrum Allocation Framework</div>
+        <p class="cons-desc">Consultation on the policy and technical framework for the allocation of millimeter-wave and sub-6GHz spectrum bands for 5G commercial deployment.</p>
+        <div class="cons-footer"><span class="cons-deadline">⏰ Closes: 15 April 2025</span><button class="cons-cta" onclick="openModal('consult','CONS-2025-002','5G Spectrum Allocation Framework')">Submit Comment ⟶</button></div>
+      </div>
+      <div class="cons-card reveal" role="listitem" tabindex="0">
+        <div class="cons-status-row"><div class="cons-dot closing" aria-hidden="true"></div><span class="cons-status-txt closing">Closing Soon</span></div>
+        <div class="cons-title">Electronic Communications (Tariff) Regulations Review</div>
+        <p class="cons-desc">Review of current tariff regulations applicable to electronic communications service providers, including interconnection rates and retail price benchmarking.</p>
+        <div class="cons-footer"><span class="cons-deadline">⏰ Closes: 22 March 2025</span><button class="cons-cta" onclick="openModal('consult','CONS-2025-003','Electronic Communications Tariff Regulations Review')">Submit Comment ⟶</button></div>
+      </div>
+      <div class="cons-card reveal" role="listitem" tabindex="0">
+        <div class="cons-status-row"><div class="cons-dot closed" aria-hidden="true"></div><span class="cons-status-txt closed">Closed — Under Review</span></div>
+        <div class="cons-title">Draft Data Protection Regulations 2024</div>
+        <p class="cons-desc">Implementing regulations to the Botswana Data Protection Act, including data breach notification requirements and cross-border data transfer rules.</p>
+        <div class="cons-footer"><span class="cons-deadline">📋 142 submissions received</span><button class="cons-cta" onclick="openModal('submissions','CONS-2024-008','Draft Data Protection Regulations 2024')">View Submissions ⟶</button></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATISTICS -->
+<section class="section stats-section" aria-labelledby="stats-title">
+  <div class="container">
+    <div class="stats-header">
+      <span class="tag">Market Intelligence</span>
+      <h2 class="section-title" id="stats-title">Sector <span>Statistics</span> Dashboard</h2>
+      <p class="section-lead">Key performance indicators across Botswana's communications sector — updated quarterly.</p>
+    </div>
+    <div class="stats-layout">
+      <div class="sd-left">
+        <div class="sd-metrics" role="list" aria-label="Key sector statistics">
+          <div class="sd-metric reveal" role="listitem">
+            <div class="sd-num"><span class="counter" data-target="4.2">0</span><span class="sd-suffix">M</span></div>
+            <div class="sd-label">Mobile Subscribers</div>
+            <div class="sd-trend up">▲ 8.3% YoY</div>
+          </div>
+          <div class="sd-metric reveal" role="listitem">
+            <div class="sd-num"><span class="counter" data-target="89">0</span><span class="sd-suffix">%</span></div>
+            <div class="sd-label">Mobile Penetration Rate</div>
+            <div class="sd-trend up">▲ 3.1% YoY</div>
+          </div>
+          <div class="sd-metric reveal" role="listitem">
+            <div class="sd-num"><span class="counter" data-target="62">0</span><span class="sd-suffix">%</span></div>
+            <div class="sd-label">Internet Penetration</div>
+            <div class="sd-trend up">▲ 11.4% YoY</div>
+          </div>
+        </div>
+        <div class="chart-box">
+          <div class="cb-head">
+            <div class="cb-title">Subscriber Growth (2020–2024)</div>
+            <div class="legend" aria-hidden="true">
+              <span class="legend-item"><span class="legend-dot" style="background:var(--gold)"></span>Mobile</span>
+              <span class="legend-item"><span class="legend-dot" style="background:var(--steel)"></span>Internet</span>
+            </div>
+          </div>
+          <svg class="area-svg" viewBox="0 0 600 110" preserveAspectRatio="none" aria-label="Subscriber growth chart" role="img">
+            <defs>
+              <linearGradient id="g1" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="rgba(201,168,76,0.45)"/><stop offset="100%" stop-color="rgba(201,168,76,0)"/></linearGradient>
+              <linearGradient id="g2" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="rgba(139,163,191,0.3)"/><stop offset="100%" stop-color="rgba(139,163,191,0)"/></linearGradient>
+            </defs>
+            <path d="M0,88 L120,72 L240,58 L360,42 L480,28 L600,12 L600,110 L0,110 Z" fill="url(#g1)"/>
+            <path d="M0,88 L120,72 L240,58 L360,42 L480,28 L600,12" fill="none" stroke="var(--gold)" stroke-width="2.5"/>
+            <path d="M0,98 L120,92 L240,82 L360,68 L480,52 L600,38 L600,110 L0,110 Z" fill="url(#g2)"/>
+            <path d="M0,98 L120,92 L240,82 L360,68 L480,52 L600,38" fill="none" stroke="var(--steel)" stroke-width="2" stroke-dasharray="5,4"/>
+            <text x="0" y="108" fill="#8BA3BF" font-size="10" font-family="JetBrains Mono">2020</text>
+            <text x="110" y="108" fill="#8BA3BF" font-size="10" font-family="JetBrains Mono">2021</text>
+            <text x="228" y="108" fill="#8BA3BF" font-size="10" font-family="JetBrains Mono">2022</text>
+            <text x="348" y="108" fill="#8BA3BF" font-size="10" font-family="JetBrains Mono">2023</text>
+            <text x="470" y="108" fill="#8BA3BF" font-size="10" font-family="JetBrains Mono">2024</text>
+          </svg>
+        </div>
+      </div>
+      <div class="sd-right">
+        <div class="panel">
+          <div class="panel-title">Licences by Sector</div>
+          <div class="donut-row">
+            <svg width="80" height="80" viewBox="0 0 36 36" aria-label="Donut chart showing licence distribution by sector" role="img">
+              <circle cx="18" cy="18" r="15.9" fill="none" stroke="#e0e0e0" stroke-width="3.5"/>
+              <circle cx="18" cy="18" r="15.9" fill="none" stroke="var(--gold)" stroke-width="3.5" stroke-dasharray="45 55" stroke-dashoffset="25" transform="rotate(-90 18 18)"/>
+              <circle cx="18" cy="18" r="15.9" fill="none" stroke="var(--navy)" stroke-width="3.5" stroke-dasharray="28 72" stroke-dashoffset="-20" transform="rotate(-90 18 18)"/>
+              <circle cx="18" cy="18" r="15.9" fill="none" stroke="var(--steel)" stroke-width="3.5" stroke-dasharray="17 83" stroke-dashoffset="-48" transform="rotate(-90 18 18)"/>
+              <circle cx="18" cy="18" r="15.9" fill="none" stroke="var(--green)" stroke-width="3.5" stroke-dasharray="10 90" stroke-dashoffset="-65" transform="rotate(-90 18 18)"/>
+            </svg>
+            <div class="donut-legend">
+              <div class="dl-item"><div class="dl-color" style="background:var(--gold)"></div><span class="dl-label">Telecom</span><span class="dl-pct">45%</span></div>
+              <div class="dl-item"><div class="dl-color" style="background:var(--navy)"></div><span class="dl-label">Broadcasting</span><span class="dl-pct">28%</span></div>
+              <div class="dl-item"><div class="dl-color" style="background:var(--steel)"></div><span class="dl-label">Postal</span><span class="dl-pct">17%</span></div>
+              <div class="dl-item"><div class="dl-color" style="background:var(--green)"></div><span class="dl-label">Internet</span><span class="dl-pct">10%</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="panel">
+          <div class="panel-title">Recent Activity</div>
+          <div class="activity-feed" aria-live="polite">
+            <div class="af-item"><div class="af-icon">📋</div><div><div class="af-text">Telecom licence TL-2025-089 approved</div><div class="af-time">2 hours ago</div></div></div>
+            <div class="af-item"><div class="af-icon">📣</div><div><div class="af-text">Consumer complaint CC-2025-1247 resolved</div><div class="af-time">5 hours ago</div></div></div>
+            <div class="af-item"><div class="af-icon">🌐</div><div><div class="af-text">3 new .bw domains registered today</div><div class="af-time">8 hours ago</div></div></div>
+            <div class="af-item"><div class="af-icon">🔒</div><div><div class="af-text">BW-CIRT advisory published</div><div class="af-time">1 day ago</div></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DOMAIN REGISTRY -->
+<section class="section domain-section" aria-labelledby="domain-title">
+  <div class="container">
+    <div class="domain-layout">
+      <div>
+        <span class="tag">.BW Domain Registry</span>
+        <h2 class="section-title light" id="domain-title">Register Your<br><span>Botswana Identity</span></h2>
+        <p class="section-lead" style="color:var(--steel)">Secure your .bw domain name and establish your Botswana online presence. BOCRA administers the .bw registry in the public interest with DNSSEC protection.</p>
+        <div class="domain-search-bar" role="search" aria-label="Domain name search">
+          <label for="domain-input" class="sr-only">Enter domain name to search</label>
+          <input class="ds-input" id="domain-input" type="text" placeholder="Search for your domain name…" oninput="clearDomainResult()" onkeydown="if(event.key==='Enter')searchDomain()">
+          <div class="ds-ext" aria-hidden="true">.co.bw</div>
+          <button class="ds-btn" onclick="searchDomain()" aria-label="Search domain availability">Search ›</button>
+        </div>
+        <div class="ds-result" id="domain-result" role="status" aria-live="polite"></div>
+        <div class="tld-pills" role="group" aria-label="Available domain extensions">
+          <span class="tld-pill" tabindex="0">.co.bw</span>
+          <span class="tld-pill" tabindex="0">.org.bw</span>
+          <span class="tld-pill" tabindex="0">.net.bw</span>
+          <span class="tld-pill" tabindex="0">.gov.bw</span>
+          <span class="tld-pill" tabindex="0">.ac.bw</span>
+          <span class="tld-pill" tabindex="0">.edu.bw</span>
+        </div>
+      </div>
+      <div class="domain-stats" role="list" aria-label="Domain registry statistics">
+        <div class="ds-stat reveal" role="listitem"><span class="ds-stat-label">Total .BW Domains Registered</span><span class="ds-stat-val">2,417</span></div>
+        <div class="ds-stat reveal" role="listitem"><span class="ds-stat-label">New Registrations (This Month)</span><span class="ds-stat-val">38</span></div>
+        <div class="ds-stat reveal" role="listitem"><span class="ds-stat-label">Accredited Registrars</span><span class="ds-stat-val">12</span></div>
+        <div class="ds-stat reveal" role="listitem"><span class="ds-stat-label">DNSSEC Enabled Domains</span><span class="ds-stat-val">67%</span></div>
+        <div class="ds-stat reveal" role="listitem"><span class="ds-stat-label">Registry Uptime SLA</span><span class="ds-stat-val">99.97%</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECURITY & DATA PROTECTION -->
+<section class="section security-section" aria-labelledby="security-title">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:44px">
+      <span class="tag">Security &amp; Privacy</span>
+      <h2 class="section-title" id="security-title">Built on <span>Trust &amp; Security</span></h2>
+      <p class="section-lead" style="max-width:600px;margin:12px auto 0">Every digital interaction on this platform is protected by industry-leading security practices and aligned with Botswana's Data Protection Act 2018.</p>
+    </div>
+    <div class="sec-layout">
+      <div>
+        <div class="security-badges" role="list" aria-label="Security certifications and features">
+          <div class="sec-badge reveal" role="listitem"><span class="sec-badge-icon" aria-hidden="true">🔐</span><div class="sec-badge-title">SSL / TLS 1.3</div><div class="sec-badge-desc">All data encrypted in transit using TLS 1.3. Certificate pinning enforced on API endpoints.</div><span class="sec-badge-check">✓ ACTIVE</span></div>
+          <div class="sec-badge reveal" role="listitem"><span class="sec-badge-icon" aria-hidden="true">🛡</span><div class="sec-badge-title">GDPR-Aligned</div><div class="sec-badge-desc">Data practices aligned with Botswana's Data Protection Act 2018 and GDPR principles.</div><span class="sec-badge-check">✓ COMPLIANT</span></div>
+          <div class="sec-badge reveal" role="listitem"><span class="sec-badge-icon" aria-hidden="true">🔑</span><div class="sec-badge-title">Multi-Factor Auth</div><div class="sec-badge-desc">All licencee portal accounts require MFA. Supports TOTP, SMS OTP, and hardware keys.</div><span class="sec-badge-check">✓ ENFORCED</span></div>
+          <div class="sec-badge reveal" role="listitem"><span class="sec-badge-icon" aria-hidden="true">📋</span><div class="sec-badge-title">Audit Logging</div><div class="sec-badge-desc">Full audit trail for all administrative and user actions with tamper-proof log storage.</div><span class="sec-badge-check">✓ ENABLED</span></div>
+          <div class="sec-badge reveal" role="listitem"><span class="sec-badge-icon" aria-hidden="true">🧱</span><div class="sec-badge-title">WAF Protection</div><div class="sec-badge-desc">Web Application Firewall actively blocks SQL injection, XSS, CSRF, and DDoS attacks.</div><span class="sec-badge-check">✓ ACTIVE</span></div>
+          <div class="sec-badge reveal" role="listitem"><span class="sec-badge-icon" aria-hidden="true">🗑</span><div class="sec-badge-title">Data Minimisation</div><div class="sec-badge-desc">Only essential data is collected and retained. Automated purge schedules enforced.</div><span class="sec-badge-check">✓ COMPLIANT</span></div>
+        </div>
+      </div>
+      <div>
+        <span class="tag">Data Protection</span>
+        <h3 class="section-title" style="font-size:clamp(22px,2.5vw,32px);margin-bottom:8px">Your Data.<br><span>Protected by Law.</span></h3>
+        <p class="section-lead">BOCRA is committed to processing your personal information lawfully, fairly, and transparently in accordance with the Botswana Data Protection Act 2018.</p>
+        <div class="data-protection-list" role="list">
+          <div class="dp-item reveal" role="listitem"><span class="dp-icon" aria-hidden="true">📋</span><div><div class="dp-title">Lawful Basis for Processing</div><div class="dp-desc">All data processing activities are conducted under a lawful basis — regulatory mandate, consent, or legitimate interest.</div></div></div>
+          <div class="dp-item reveal" role="listitem"><span class="dp-icon" aria-hidden="true">🔔</span><div><div class="dp-title">Breach Notification</div><div class="dp-desc">Data breaches are reported to the Information and Data Protection Commissioner within 72 hours as required by law.</div></div></div>
+          <div class="dp-item reveal" role="listitem"><span class="dp-icon" aria-hidden="true">✋</span><div><div class="dp-title">Your Rights</div><div class="dp-desc">You have the right to access, correct, delete, and port your personal data. Submit requests through our Data Subject Access Request portal.</div></div></div>
+        </div>
+        <div class="sec-compliance" aria-label="Compliance status dashboard">
+          <div class="sec-comp-title">📊 Compliance Status</div>
+          <div class="comp-list" role="list">
+            <div class="comp-item" role="listitem"><span class="comp-name">Data Protection Act 2018</span><div class="comp-bar-wrap"><div class="comp-bar" style="width:100%"></div></div><span class="comp-status compliant">COMPLIANT</span></div>
+            <div class="comp-item" role="listitem"><span class="comp-name">Cybersecurity Framework</span><div class="comp-bar-wrap"><div class="comp-bar" style="width:100%"></div></div><span class="comp-status compliant">COMPLIANT</span></div>
+            <div class="comp-item" role="listitem"><span class="comp-name">WCAG 2.1 Accessibility</span><div class="comp-bar-wrap"><div class="comp-bar partial" style="width:80%"></div></div><span class="comp-status partial">IN PROGRESS</span></div>
+            <div class="comp-item" role="listitem"><span class="comp-name">ISO 27001</span><div class="comp-bar-wrap"><div class="comp-bar partial" style="width:70%"></div></div><span class="comp-status partial">IN PROGRESS</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- API & INTEGRATION -->
+<section class="section integration-section" aria-labelledby="api-title">
+  <div class="container">
+    <div class="integration-header">
+      <span class="tag">Scalability &amp; Integration</span>
+      <h2 class="section-title light" id="api-title">Open <span>API</span> &amp; System Integration</h2>
+      <p class="section-lead" style="color:var(--steel);max-width:600px;margin:12px auto 0">BOCRA's platform is built for interoperability — exposing RESTful APIs and supporting integration with government and commercial systems.</p>
+    </div>
+    <div class="integration-layout">
+      <div>
+        <span class="tag" style="margin-bottom:16px">API Explorer</span>
+        <div class="api-showcase">
+          <div class="api-tabs" role="tablist">
+            <button class="api-tab active" role="tab" onclick="switchApiTab(this,'api1')">Licences</button>
+            <button class="api-tab" role="tab" onclick="switchApiTab(this,'api2')">Complaints</button>
+            <button class="api-tab" role="tab" onclick="switchApiTab(this,'api3')">Registry</button>
+          </div>
+          <div id="api1" class="code-block">
+            <button class="copy-code-btn" onclick="copyCode('api1')">COPY</button>
+<span class="kw">GET</span> /api/v1/licences
+<span class="key">Authorization:</span> <span class="str">Bearer {token}</span>
+<span class="key">Content-Type:</span> <span class="str">application/json</span>
+
+<span class="kw">Response:</span> <span class="val">200 OK</span>
+{
+  <span class="key">"licences"</span>: [
+    {
+      <span class="key">"id"</span>: <span class="str">"TL-2025-089"</span>,
+      <span class="key">"type"</span>: <span class="str">"Telecom - Class B"</span>,
+      <span class="key">"status"</span>: <span class="str">"Active"</span>,
+      <span class="key">"issued"</span>: <span class="str">"2025-01-15"</span>,
+      <span class="key">"expires"</span>: <span class="str">"2030-01-14"</span>
+    }
+  ],
+  <span class="key">"total"</span>: <span class="val">147</span>
+}</div>
+          <div id="api2" class="code-block" style="display:none">
+            <button class="copy-code-btn" onclick="copyCode('api2')">COPY</button>
+<span class="kw">POST</span> /api/v1/complaints
+<span class="key">Authorization:</span> <span class="str">Bearer {token}</span>
+
+<span class="kw">Body:</span>
+{
+  <span class="key">"complainant"</span>: <span class="str">"Jane Doe"</span>,
+  <span class="key">"provider"</span>: <span class="str">"Mascom Wireless"</span>,
+  <span class="key">"category"</span>: <span class="str">"Billing Dispute"</span>,
+  <span class="key">"description"</span>: <span class="str">"Overcharged…"</span>
+}
+
+<span class="kw">Response:</span> <span class="val">201 Created</span>
+{
+  <span class="key">"reference"</span>: <span class="str">"BOCRA-2025-1248"</span>,
+  <span class="key">"status"</span>: <span class="str">"Received"</span>,
+  <span class="key">"eta"</span>: <span class="str">"48–72 hours"</span>
+}</div>
+          <div id="api3" class="code-block" style="display:none">
+            <button class="copy-code-btn" onclick="copyCode('api3')">COPY</button>
+<span class="kw">GET</span> /api/v1/registry/whois
+<span class="key">?domain=</span><span class="str">company.co.bw</span>
+
+<span class="kw">Response:</span> <span class="val">200 OK</span>
+{
+  <span class="key">"domain"</span>: <span class="str">"company.co.bw"</span>,
+  <span class="key">"status"</span>: <span class="str">"Active"</span>,
+  <span class="key">"registrar"</span>: <span class="str">"BOCRA Registry"</span>,
+  <span class="key">"created"</span>: <span class="str">"2022-03-10"</span>,
+  <span class="key">"dnssec"</span>: <span class="val">true</span>,
+  <span class="key">"expires"</span>: <span class="str">"2026-03-09"</span>
+}</div>
+        </div>
+      </div>
+      <div>
+        <span class="tag" style="margin-bottom:16px">Integrated Systems</span>
+        <div class="integration-systems" role="list">
+          <div class="int-sys reveal" role="listitem">
+            <div class="int-sys-icon" aria-hidden="true">🏛</div>
+            <div>
+              <div class="int-sys-name">Government Single Window (Gov2Bots)</div>
+              <div class="int-sys-desc">Real-time integration with Botswana's unified e-government portal for licence verification and citizen identity.</div>
+              <div class="int-status"><div class="int-dot live"></div><span class="int-status-txt">LIVE</span></div>
+            </div>
+          </div>
+          <div class="int-sys reveal" role="listitem">
+            <div class="int-sys-icon" aria-hidden="true">💳</div>
+            <div>
+              <div class="int-sys-name">BancABC / FNBB Payment Gateway</div>
+              <div class="int-sys-desc">Secure online payment processing for licence fees, renewal charges, and domain registrations via PCI-DSS compliant gateway.</div>
+              <div class="int-status"><div class="int-dot live"></div><span class="int-status-txt">LIVE</span></div>
+            </div>
+          </div>
+          <div class="int-sys reveal" role="listitem">
+            <div class="int-sys-icon" aria-hidden="true">📡</div>
+            <div>
+              <div class="int-sys-name">National Frequency Registry (NFC)</div>
+              <div class="int-sys-desc">Automated spectrum assignment and interference management integration with BOCRA's National Frequency Coordinator system.</div>
+              <div class="int-status"><div class="int-dot live"></div><span class="int-status-txt">LIVE</span></div>
+            </div>
+          </div>
+          <div class="int-sys reveal" role="listitem">
+            <div class="int-sys-icon" aria-hidden="true">🔗</div>
+            <div>
+              <div class="int-sys-name">ICANN / IANA Registry</div>
+              <div class="int-sys-desc">Real-time synchronisation with ICANN's IANA registry for .bw ccTLD delegation and DNSSEC chain-of-trust management.</div>
+              <div class="int-status"><div class="int-dot planned"></div><span class="int-status-txt">Q3 2025</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STAKEHOLDERS -->
+<section class="section stakeholder-section" aria-labelledby="sh-title">
+  <div class="container">
+    <div class="sh-header">
+      <span class="tag">Stakeholder Directory</span>
+      <h2 class="section-title" id="sh-title">Regulated <span>Entities</span></h2>
+    </div>
+    <div class="sh-cards" role="list">
+      <div class="sh-card reveal" role="listitem" tabindex="0" onclick="openModal('directory','Telecom Operators','📡')"><span class="sh-icon" aria-hidden="true">📡</span><div class="sh-name">Telecom Operators</div><div class="sh-count">23</div></div>
+      <div class="sh-card reveal" role="listitem" tabindex="0" onclick="openModal('directory','Broadcasters','📺')"><span class="sh-icon" aria-hidden="true">📺</span><div class="sh-name">Broadcasters</div><div class="sh-count">41</div></div>
+      <div class="sh-card reveal" role="listitem" tabindex="0" onclick="openModal('directory','Postal Providers','📮')"><span class="sh-icon" aria-hidden="true">📮</span><div class="sh-name">Postal Providers</div><div class="sh-count">18</div></div>
+      <div class="sh-card reveal" role="listitem" tabindex="0" onclick="openModal('directory','Internet Service Providers','🌐')"><span class="sh-icon" aria-hidden="true">🌐</span><div class="sh-name">ISPs</div><div class="sh-count">52</div></div>
+      <div class="sh-card reveal" role="listitem" tabindex="0" onclick="openModal('directory','Government Institutions','🏛')"><span class="sh-icon" aria-hidden="true">🏛</span><div class="sh-name">Gov. Institutions</div><div class="sh-count">13</div></div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <div class="fl-hex" aria-hidden="true"><span>B</span></div>
+          <div class="fl-text"><div class="fn">BOCRA</div><div class="fs">Botswana Communications Regulatory Authority</div></div>
+        </div>
+        <p>Regulating Botswana's communications sector in the public interest — fostering competition, protecting consumers, and enabling a secure digital future for all Batswana.</p>
+        <div class="social-row" aria-label="Social media links">
+          <a href="#" class="soc-btn" aria-label="Follow BOCRA on Twitter/X">𝕏</a>
+          <a href="#" class="soc-btn" aria-label="Follow BOCRA on Facebook">f</a>
+          <a href="#" class="soc-btn" aria-label="Follow BOCRA on LinkedIn">in</a>
+          <a href="#" class="soc-btn" aria-label="Watch BOCRA on YouTube">▶</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul role="list">
+          <li><a href="#">Apply for Licence</a></li>
+          <li><a href="#">Renew Licence</a></li>
+          <li><a href="#">File a Complaint</a></li>
+          <li><a href="#">Register Domain</a></li>
+          <li><a href="#">Type Approval</a></li>
+          <li><a href="#">Report Cyber Incident</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Regulatory</h4>
+        <ul role="list">
+          <li><a href="#">Legislation</a></li>
+          <li><a href="#">Regulations</a></li>
+          <li><a href="#">Spectrum Plans</a></li>
+          <li><a href="#">Consultations</a></li>
+          <li><a href="#">Guidelines</a></li>
+          <li><a href="#">Compliance</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>About BOCRA</h4>
+        <ul role="list">
+          <li><a href="#">Mandate</a></li>
+          <li><a href="#">Board &amp; Management</a></li>
+          <li><a href="#">Annual Reports</a></li>
+          <li><a href="#">Tenders</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Botswana Communications Regulatory Authority. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+        <a href="#">Accessibility Statement</a>
+        <a href="#">Sitemap</a>
+        <a href="#">DSAR Portal</a>
+      </div>
+      <div class="bw-identity">
+        <div class="bw-flag" aria-hidden="true"></div>
+        <span>Republic of Botswana</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- AI CHATBOT FAB -->
+<button class="chat-fab" id="chat-fab" onclick="toggleChat()" aria-label="Open BOCRA AI Assistant" aria-expanded="false" aria-controls="chat-window">
+  💬
+  <span class="chat-label" aria-hidden="true">BOCRA AI Assistant</span>
+</button>
+
+<!-- CHAT WINDOW -->
+<div class="chat-window" id="chat-window" role="dialog" aria-label="BOCRA AI Assistant" aria-modal="true">
+  <div class="chat-header">
+    <div class="chat-header-left">
+      <div class="chat-avatar" aria-hidden="true">🤖</div>
+      <div>
+        <div class="chat-title">BOCRA AI Assistant</div>
+        <div class="chat-sub"><span class="live-dot"></span>Online · Powered by Claude</div>
+      </div>
+    </div>
+    <button class="chat-close" onclick="toggleChat()" aria-label="Close chat">✕</button>
+  </div>
+  <div class="chat-messages" id="chat-messages" role="log" aria-label="Conversation" aria-live="polite">
+    <div class="chat-msg bot">
+      <div class="chat-bubble">👋 Hello! I'm BOCRA's AI Assistant. I can help you with licensing information, filing complaints, domain registration, cybersecurity advisories, and general regulatory queries. How can I assist you today?</div>
+      <div class="chat-time">Just now</div>
+    </div>
+  </div>
+  <div class="chat-quick" id="chat-quick" aria-label="Quick questions">
+    <button class="chat-quick-btn" onclick="sendQuick('How do I apply for a telecom licence?')">📋 Apply for Licence</button>
+    <button class="chat-quick-btn" onclick="sendQuick('How do I file a complaint?')">📣 File Complaint</button>
+    <button class="chat-quick-btn" onclick="sendQuick('How do I register a .bw domain?')">🌐 .BW Domain</button>
+    <button class="chat-quick-btn" onclick="sendQuick('What is BW-CIRT?')">🔒 BW-CIRT</button>
+  </div>
+  <div class="chat-input-row">
+    <label for="chat-input" class="sr-only">Type your message</label>
+    <input type="text" id="chat-input" class="chat-input" placeholder="Ask me anything about BOCRA…" onkeydown="if(event.key==='Enter')sendChat()" aria-label="Chat message input">
+    <button class="chat-send" onclick="sendChat()" aria-label="Send message">➤</button>
+  </div>
+</div>
+
+<!-- JS loaded externally -->
+
+<!-- ═══════ MODAL SYSTEM ═══════ -->
+<div class="modal-overlay" id="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title-text" onclick="if(event.target===this)closeModal()">
+  <div class="modal" id="modal-box">
+    <div class="modal-header">
+      <div class="modal-title" id="modal-title-text"></div>
+      <button class="modal-close" onclick="closeModal()" aria-label="Close modal">✕</button>
+    </div>
+    <div class="modal-body" id="modal-body"></div>
+  </div>
+</div>
+
+<script type="module" src="/js/app.js"></script>
+</body>
+</html>

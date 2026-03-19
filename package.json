@@ -1,0 +1,21 @@
+{
+  "name": "bocra-digital-platform",
+  "version": "1.0.0",
+  "description": "Botswana Communications Regulatory Authority – Digital Platform",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start":   "node server.js",
+    "dev":     "node --watch server.js",
+    "seed":    "node db/seed.js",
+    "setup":   "node db/seed.js && node server.js"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": ["bocra", "botswana", "regulatory", "government"],
+  "author": "BOCRA Hackathon Team",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {}
+}

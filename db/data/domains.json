@@ -1,0 +1,65 @@
+[
+  {
+    "id": "D-001",
+    "domain": "bocra.org.bw",
+    "registrant": "BOCRA",
+    "status": "Active",
+    "dnssec": true,
+    "created": "2012-01-01",
+    "expires": "2026-01-01"
+  },
+  {
+    "id": "D-002",
+    "domain": "gov.bw",
+    "registrant": "Government of BW",
+    "status": "Active",
+    "dnssec": true,
+    "created": "2000-01-01",
+    "expires": "2026-01-01"
+  },
+  {
+    "id": "D-003",
+    "domain": "mascom.co.bw",
+    "registrant": "Mascom Wireless",
+    "status": "Active",
+    "dnssec": false,
+    "created": "2005-06-12",
+    "expires": "2026-06-12"
+  },
+  {
+    "id": "D-004",
+    "domain": "orange.co.bw",
+    "registrant": "Orange Botswana",
+    "status": "Active",
+    "dnssec": false,
+    "created": "2007-03-01",
+    "expires": "2026-03-01"
+  },
+  {
+    "id": "D-005",
+    "domain": "btc.co.bw",
+    "registrant": "BTC",
+    "status": "Active",
+    "dnssec": true,
+    "created": "1998-09-15",
+    "expires": "2026-09-15"
+  },
+  {
+    "id": "D-006",
+    "domain": "ub.ac.bw",
+    "registrant": "University of BW",
+    "status": "Active",
+    "dnssec": false,
+    "created": "2002-01-01",
+    "expires": "2026-01-01"
+  },
+  {
+    "id": "D-007",
+    "domain": "bankofbotswana.bw",
+    "registrant": "Bank of Botswana",
+    "status": "Active",
+    "dnssec": true,
+    "created": "2001-04-01",
+    "expires": "2026-04-01"
+  }
+]

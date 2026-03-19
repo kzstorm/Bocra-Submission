@@ -1,0 +1,41 @@
+[
+  {
+    "id": "BOCRA-2025-1001",
+    "name": "John Tladi",
+    "contact": "john.tladi@gmail.com",
+    "provider": "Mascom Wireless",
+    "category": "Billing Dispute",
+    "description": "Charged twice for the same data bundle on 01 March 2025.",
+    "status": "Resolved",
+    "assignedTo": "Consumer Affairs Officer – Ms. Kebonye",
+    "resolution": "Provider instructed to issue full refund within 5 business days.",
+    "createdAt": "2025-03-01T09:00:00Z",
+    "updatedAt": "2025-03-05T14:30:00Z"
+  },
+  {
+    "id": "BOCRA-2025-1150",
+    "name": "Mary Molefe",
+    "contact": "mary.m@outlook.com",
+    "provider": "Orange Botswana",
+    "category": "Poor Service Quality",
+    "description": "No 4G signal in Francistown CBD for 2 weeks.",
+    "status": "Under Investigation",
+    "assignedTo": "Technical Investigations Unit",
+    "resolution": null,
+    "createdAt": "2025-03-10T11:00:00Z",
+    "updatedAt": "2025-03-12T08:00:00Z"
+  },
+  {
+    "id": "BOCRA-2025-1247",
+    "name": "Samuel Seretse",
+    "contact": "+267 71234567",
+    "provider": "BTC",
+    "category": "Unauthorised Charges",
+    "description": "BWP 120 deducted from my account without authorisation.",
+    "status": "Awaiting Provider Response",
+    "assignedTo": "Consumer Affairs Officer – Mr. Kefilwe",
+    "resolution": null,
+    "createdAt": "2025-03-13T15:20:00Z",
+    "updatedAt": "2025-03-14T09:00:00Z"
+  }
+]

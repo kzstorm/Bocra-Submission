@@ -1,0 +1,82 @@
+[
+  {
+    "id": "NEWS-001",
+    "type": "Press Release",
+    "title": "BOCRA Opens Public Consultation on Mobile Number Portability Regulations 2025",
+    "excerpt": "BOCRA invites all stakeholders to submit written comments on proposed Mobile Number Portability Regulations. The consultation period closes 31 March 2025.",
+    "body": "The Botswana Communications Regulatory Authority (BOCRA) today opened a public consultation on the proposed Mobile Number Portability Regulations 2025. The regulations aim to enhance consumer choice and promote competition in the mobile telecommunications market by enabling subscribers to retain their mobile numbers when switching service providers. Stakeholders including telecommunications operators, consumer advocacy groups, and members of the public are invited to submit written comments by 31 March 2025. Submissions can be made online through the BOCRA Consultations Portal or submitted in writing to BOCRA House, Gaborone.",
+    "tags": [
+      "MNP",
+      "Consumer",
+      "Regulation"
+    ],
+    "date": "2025-03-14",
+    "author": "BOCRA Communications",
+    "featured": true,
+    "createdAt": "2025-03-14T08:00:00Z"
+  },
+  {
+    "id": "NEWS-002",
+    "type": "Advisory",
+    "title": "BW-CIRT Issues Critical Advisory on Enterprise VPN Vulnerabilities",
+    "excerpt": "BW-CIRT identifies critical remote code execution vulnerability in enterprise VPN solutions affecting Botswana organisations — immediate patching required.",
+    "body": "The Botswana Computer Incident Response Team (BW-CIRT) has issued a critical security advisory regarding a zero-day remote code execution vulnerability (CVE-2025-0412) affecting widely deployed enterprise VPN solutions. Organisations using affected products are urged to apply available patches immediately and monitor systems for signs of compromise.",
+    "tags": [
+      "Cybersecurity",
+      "BW-CIRT",
+      "Advisory"
+    ],
+    "date": "2025-03-12",
+    "author": "BW-CIRT",
+    "featured": false,
+    "createdAt": "2025-03-12T10:00:00Z"
+  },
+  {
+    "id": "NEWS-003",
+    "type": "Announcement",
+    "title": "BOCRA Announces 5G Spectrum Allocation Framework",
+    "excerpt": "BOCRA releases framework for commercial 5G deployment in Botswana targeting Q3 2025 rollout in major urban centres.",
+    "body": "BOCRA has published the 5G Spectrum Allocation Framework outlining the technical and licensing conditions for commercial 5G deployment. The framework covers sub-6GHz (700MHz, 2600MHz, 3500MHz) and mmWave (26GHz) bands. A public consultation will be held before final framework adoption.",
+    "tags": [
+      "5G",
+      "Spectrum",
+      "Announcement"
+    ],
+    "date": "2025-03-08",
+    "author": "BOCRA Spectrum Division",
+    "featured": false,
+    "createdAt": "2025-03-08T09:00:00Z"
+  },
+  {
+    "id": "NEWS-004",
+    "type": "Notice",
+    "title": "New QoS Benchmarks for Mobile Broadband Published",
+    "excerpt": "BOCRA sets mandatory quality-of-service benchmarks for mobile broadband effective Q2 2025. Operators must comply by 30 June 2025.",
+    "body": "BOCRA has published revised Quality of Service benchmarks for mobile broadband services. The new benchmarks set minimum thresholds for download speeds, latency, and network availability. All licensed mobile operators are required to comply by 30 June 2025 and submit quarterly QoS reports.",
+    "tags": [
+      "QoS",
+      "Consumer",
+      "Mobile"
+    ],
+    "date": "2025-03-03",
+    "author": "BOCRA Technical Division",
+    "featured": false,
+    "createdAt": "2025-03-03T08:00:00Z"
+  },
+  {
+    "id": "NEWS-005",
+    "type": "Announcement",
+    "title": "Upgraded .BW Domain Registry Portal Launched",
+    "excerpt": "BOCRA launches enhanced .BW domain registry with DNSSEC support, improved WHOIS, and self-service domain management.",
+    "body": "BOCRA has officially launched the upgraded .BW Domain Registry Portal, featuring full DNSSEC implementation, an enhanced WHOIS lookup service, and a self-service management dashboard for domain registrants. The portal integrates with all 12 accredited .bw registrars.",
+    "tags": [
+      "Registry",
+      ".BW",
+      "DNSSEC"
+    ],
+    "date": "2025-02-28",
+    "author": "BOCRA Registry Division",
+    "featured": false,
+    "createdAt": "2025-02-28T08:00:00Z"
+  }
+]

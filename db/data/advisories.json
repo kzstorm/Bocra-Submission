@@ -1,0 +1,33 @@
+[
+  {
+    "id": "ADV-2025-04",
+    "severity": "CRITICAL",
+    "title": "Enterprise VPN Zero-Day — CVE-2025-0412",
+    "description": "A critical remote code execution vulnerability has been identified in widely used enterprise VPN solutions. Immediate patching required.",
+    "cve": "CVE-2025-0412",
+    "affectedProducts": [
+      "FortiGate",
+      "Pulse Secure",
+      "Cisco AnyConnect"
+    ],
+    "mitigation": "Apply vendor-provided patches immediately. If patching is not possible, restrict VPN access to trusted IP ranges.",
+    "status": "Active",
+    "published": "2025-03-12",
+    "createdAt": "2025-03-12T10:00:00Z"
+  },
+  {
+    "id": "ADV-2025-03",
+    "severity": "MODERATE",
+    "title": "Phishing Campaign Targeting Botswana Financial Institutions",
+    "description": "Active phishing campaign impersonating major Botswana banks. Employees and customers are advised to verify all email communications.",
+    "cve": null,
+    "affectedProducts": [
+      "Email clients",
+      "Web browsers"
+    ],
+    "mitigation": "Enable multi-factor authentication. Train staff to identify phishing indicators. Report suspicious emails to BW-CIRT.",
+    "status": "Active",
+    "published": "2025-03-05",
+    "createdAt": "2025-03-05T09:00:00Z"
+  }
+]

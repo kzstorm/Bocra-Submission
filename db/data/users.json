@@ -1,0 +1,20 @@
+[
+  {
+    "id": "U-001",
+    "name": "Admin User",
+    "email": "admin@bocra.org.bw",
+    "role": "admin",
+    "passwordHash": "hashed_password_placeholder",
+    "active": true,
+    "createdAt": "2025-01-01T00:00:00Z"
+  },
+  {
+    "id": "U-002",
+    "name": "Regulatory Officer",
+    "email": "officer@bocra.org.bw",
+    "role": "officer",
+    "passwordHash": "hashed_password_placeholder",
+    "active": true,
+    "createdAt": "2025-01-01T00:00:00Z"
+  }
+]
